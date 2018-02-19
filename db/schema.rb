@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219160217) do
+ActiveRecord::Schema.define(version: 20180219160503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "performance_id"
+    t.bigint "user_id"
+    t.string "date"
+    t.string "location"
+    t.text "work_asked"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["performance_id"], name: "index_bookings_on_performance_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "performances", force: :cascade do |t|
     t.integer "price"
@@ -37,9 +50,17 @@ ActiveRecord::Schema.define(version: 20180219160217) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "avatar"
+    t.boolean "is_artist", default: false
+    t.string "photos", default: [], array: true
+    t.string "location"
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "performances"
+  add_foreign_key "bookings", "users"
   add_foreign_key "performances", "users"
 end
