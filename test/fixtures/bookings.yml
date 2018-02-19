@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  performance: one
+  user: one
+  date: MyString
+  location: MyString
+  work_asked: MyText
+  status: MyString
+
+two:
+  performance: two
+  user: two
+  date: MyString
+  location: MyString
+  work_asked: MyText
+  status: MyString
