@@ -11,13 +11,19 @@
       <%= link_to "Edit Bio", "#", class: "edit-btn" %>
     </div>
     <p> <%= @user.bio %> </p>
+    <div class="edit-form form">
+      <%= simple_form_for(@user) do |f| %>
+        <%= f.input :bio %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
 
   <div class="wrapper-edit container-fluid">
     <div class="row">
       <div class="title-card">
        <h2> My Perfs</h2>
-        <%= link_to "Add Performance", "#", class: "edit-btn" %>
+        <%= link_to "Add Performance", "#", class: "add-btn" %>
       </div>
       <%  @user.performances.each do |performance|%>
         <div class="card-performance">
@@ -31,6 +37,7 @@
   <div class="wrapper-edit">
     <div class="title-card">
       <h2> My Photos</h2>
+      <%= link_to "Add Photo", "#", class: "add-btn" %>
     </div>
 
     <div class="row">
