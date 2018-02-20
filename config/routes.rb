@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :performances, only: [ :index, :create, :update] do
     resources :bookings, only: [ :create, :update]
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
   get "/dashboard", to: "users#dashboard", as: "dashboard"
 end
