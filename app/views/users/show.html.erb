@@ -39,7 +39,7 @@
           <% @user.photos.each do |photo| %>
             <div class="col-xs-12 col-sm-4">
               <div class="photo" style="background-image: url(<%= photo %>);">
-                <a class="photo-link" href="#" ></a>
+                <%= link_to "", photo, class: "photo-link" %>
               </div>
             </div>
           <% end %>
