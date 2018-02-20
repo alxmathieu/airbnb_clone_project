@@ -1,9 +1,18 @@
 <h1>My orders</h1>
 
-<% current_user.bookings.each do |booking| %>
-<%= booking.work_asked %> || <%= booking.performance.price %>$ || Status is <%= booking.status %>
-<% end %>
-
+<ul>
+  <% @my_orders.each do |order| %>
+    <li>
+      <%= order.date %> | Order: <%= order.work_asked %> in <%= order.location %> | Price: <%= order.performance.price %>$
+    </li>
+  <% end %>
+</ul>
 
 <h1>My Bookings</h1>
 
+
+<ul>
+  <% @my_bookings.each do |booking| %>
+    <li> <%= booking[0].date %> || <%= booking[0].location %> || <%= booking[0].work_asked %> || Status: <%= booking[0].status %> </li>
+  <% end %>
+</ul>
