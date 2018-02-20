@@ -1,0 +1,28 @@
+
+
+
+.wrapper-edit {
+  padding: 10px;
+  background-color: #fafaf9;
+  margin: 20px 10px;
+  padding: 20px;
+  box-shadow: 1px 1px 1px $silver-gray;
+}
+
+
+.card-performance {
+  padding: 30px;
+  margin: 15px;
+  height: 10vh;
+  box-shadow: 1px 1px 1px $silver-gray;
+
+  h3 {
+    font-size: 15px;
+
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
