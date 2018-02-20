@@ -1,1 +1,9 @@
-<%= current_user %>
+<h1>My orders</h1>
+
+<% current_user.bookings.each do |booking| %>
+<%= booking.work_asked %> || <%= booking.performance.price %>$ || Status is <%= booking.status %>
+<% end %>
+
+
+<h1>My Bookings</h1>
+
