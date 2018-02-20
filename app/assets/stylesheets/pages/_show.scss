@@ -1,0 +1,82 @@
+body {
+  h2 {
+    font-size: 24px;
+  }
+}
+
+.banner-photo {
+    height: 50vh;
+    /* if you have a 70px navbar => height: calc(100vh - 70px); */
+    background-size: cover !important;
+}
+
+.artist-identity {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba($silver-gray, 0.4);
+}
+
+.artist-infos {
+  padding-left: 20px;
+  min-width: 100px;
+  h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 5px;
+  }
+}
+
+.artist-bio {
+  border-bottom: 1px solid rgba($silver-gray, 0.4);
+}
+
+.artist-perfs {
+  border-bottom: 1px solid rgba($silver-gray, 0.4);
+}
+.booking-form {
+  margin-top: 100px;
+}
+
+.performance {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 70px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &:hover {
+    background-color: white;
+    cursor: pointer;
+  }
+}
+
+.perf-desc {
+
+}
+
+.perf-price {
+
+}
+
+.photo {
+  margin: 5px 0px;
+  height: 175px;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.photo-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
