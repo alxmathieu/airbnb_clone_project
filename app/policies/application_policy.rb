@@ -6,9 +6,9 @@ class ApplicationPolicy
     @record = record
   end
 
-  def show?
-    scope.where(:id => record.id).exists?
-  end
+  # def show?
+  #   scope.where(:id => record.id).exists?
+  # end
 
   def scope
     Pundit.policy_scope!(user, record.class)

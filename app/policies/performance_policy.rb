@@ -9,6 +9,10 @@ class PerformancePolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    scope.where(:id => record.id).exists?
+  end
+
   def create?
     is_artist
   end

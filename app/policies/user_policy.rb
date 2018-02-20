@@ -6,8 +6,8 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    true
+  def show?
+    scope.where(:id => record.id).exists?
   end
 
   def create?
