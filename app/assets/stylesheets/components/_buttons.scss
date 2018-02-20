@@ -1,0 +1,53 @@
+
+.add-btn {
+  background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
+  border-radius: 30px;
+  margin: 15px;
+  font-size: 10px;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 1px 1px 1px $silver-gray;
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.edit-btn {
+  background-image: linear-gradient(to right, #5cc2f6, #68b9f2, #74afed, #7fa5e5, #8a9bdc);
+  border-radius: 30px;
+  margin: 15px;
+  font-size: 10px;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 1px 1px 1px $silver-gray;
+  text-align: center;
+  border-color: transparent;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.delete-btn {
+  background-image: linear-gradient(to right, #fe6c5f, #f1585c, #e4435a, #d52c58, #c60957);
+  border-radius: 30px;
+  margin: 15px;
+  font-size: 10px;
+  padding: 10px 30px;
+  width-max: 50px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 1px 1px 1px $silver-gray;
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
