@@ -9,6 +9,23 @@
   box-shadow: 1px 1px 1px $silver-gray;
 }
 
+.title-card {
+  padding: 30px;
+  margin: 15px;
+  height: 10vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.card-photos {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  img {
+    position: absolute;
+  }
+}
 
 .card-performance {
   padding: 30px;

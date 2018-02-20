@@ -5,9 +5,27 @@
   border-radius: 30px;
   margin: 15px;
   font-size: 10px;
-  padding: 10px 60px;
+  padding: 10px 30px;
   color: white;
   text-decoration: none;
   box-shadow: 1px 1px 1px $silver-gray;
 
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.add-btn {
+  background-image: linear-gradient(to right, #fe6c5f, #e25b4f, #c74b3f, #ad3a30, #932a21);
+  border-radius: 30px;
+  margin: 15px;
+  font-size: 10px;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 1px 1px 1px $silver-gray;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
