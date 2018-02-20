@@ -8,13 +8,13 @@
   <div class="wrapper-edit">
     <div class="title-card">
       <h2> My Bio </h2>
-      <%= link_to "Edit Bio", "#", class: "edit-btn" %>
+      <%= link_to "Edit Bio", "#", class: "edit-btn", id:"edit-bio-btn" %>
     </div>
     <p> <%= @user.bio %> </p>
-    <div class="edit-form form">
+    <div id="edit-form-bio" class="hidden">
       <%= simple_form_for(@user) do |f| %>
         <%= f.input :bio %>
-        <%= f.submit %>
+        <%= f.submit "Update Bio", class: "edit-btn" %>
       <% end %>
     </div>
   </div>
