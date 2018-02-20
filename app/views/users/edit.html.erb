@@ -17,7 +17,7 @@
     <div class="row">
       <div class="title-card">
        <h2> My Perfs</h2>
-        <%= link_to "Add Performance", "#", class: "add-btn" %>
+        <%= link_to "Add Performance", "#", class: "edit-btn" %>
       </div>
       <%  @user.performances.each do |performance|%>
         <div class="card-performance">
@@ -35,8 +35,9 @@
 
     <div class="row">
     <% @user.photos.each do |photo|%>
-      <div class="card-photos col-xs-4" style= "background-image : url(<%= photo %>)">;
-        <%= link_to "Delete Picture", "#", class: "edit-btn" %>
+      <div class="card-photos col-xs-4">
+        <div class= "photo-style" style= "background-image : url(<%= photo %>)"></div>
+        <%= link_to "Delete Picture", "#", class: "delete-btn" %>
       </div>
     <% end %>
     </div>

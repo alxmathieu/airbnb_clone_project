@@ -19,12 +19,27 @@
 }
 
 .card-photos {
-  position: relative;
   display: flex;
   flex-direction: column;
-  img {
-    position: absolute;
+  justify-content: space-between;
+  margin: 20px;
+  height: 50vh;
+
+  .photo-style {
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 1px $silver-gray;
+    flex: 1 1 auto;
   }
+
+  a {
+    width: 130px;
+    font-weight: lighter;
+    text-align: center;
+    align-self: center;
+  }
+
 }
 
 .card-performance {

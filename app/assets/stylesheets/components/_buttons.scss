@@ -9,23 +9,28 @@
   color: white;
   text-decoration: none;
   box-shadow: 1px 1px 1px $silver-gray;
+  text-align: center;
 
   &:hover {
     text-decoration: none;
+    color: white;
   }
 }
 
-.add-btn {
-  background-image: linear-gradient(to right, #fe6c5f, #e25b4f, #c74b3f, #ad3a30, #932a21);
+.delete-btn {
+  background-image: linear-gradient(to right, #fe6c5f, #f1585c, #e4435a, #d52c58, #c60957);
   border-radius: 30px;
   margin: 15px;
   font-size: 10px;
   padding: 10px 30px;
+  width-max: 50px;
   color: white;
   text-decoration: none;
   box-shadow: 1px 1px 1px $silver-gray;
+  text-align: center;
 
   &:hover {
     text-decoration: none;
+    color: white;
   }
 }
