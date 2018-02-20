@@ -1,0 +1,53 @@
+<div class="container">
+
+  <div class="title-card">
+    <%= image_tag @user.avatar, alt: "Avatar", width: 50 %>
+    <h1> <%= @user.username %> </h1>
+  </div>
+
+  <div class="wrapper-edit">
+    <div class="title-card">
+      <h2> My Bio </h2>
+      <%= link_to "Edit Bio", "#", class: "edit-btn", id:"edit-bio-btn" %>
+    </div>
+    <p> <%= @user.bio %> </p>
+    <div id="edit-form-bio" class="hidden">
+      <%= simple_form_for(@user) do |f| %>
+        <%= f.input :bio %>
+        <%= f.submit "Update Bio", class: "edit-btn" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="wrapper-edit container-fluid">
+    <div class="row">
+      <div class="title-card">
+       <h2> My Perfs</h2>
+        <%= link_to "Add Performance", "#", class: "add-btn" %>
+      </div>
+      <%  @user.performances.each do |performance|%>
+        <div class="card-performance">
+          <h3> <%=  performance.description %> </h3>
+          <%= link_to "Edit Performance", "#", class: "edit-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="wrapper-edit">
+    <div class="title-card">
+      <h2> My Photos</h2>
+      <%= link_to "Add Photo", "#", class: "add-btn" %>
+    </div>
+
+    <div class="row">
+    <% @user.photos.each do |photo|%>
+      <div class="card-photos col-xs-4">
+        <div class= "photo-style" style= "background-image : url(<%= photo %>)"></div>
+        <%= link_to "Delete Picture", "#", class: "delete-btn" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+

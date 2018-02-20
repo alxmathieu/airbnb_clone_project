@@ -1,0 +1,67 @@
+.card-order {
+  background-color: $white;
+  padding: 10px;
+  box-shadow: 2px 4px 14px -5px rgba(51,51,51,0.35);
+  margin: 7px;
+  margin-top: 15px;
+
+}
+
+.card-order:hover {
+  background-color: rgb(230,230,230);
+}
+
+.card-no-avatar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar-dash {
+  padding: 10px;
+  height: 95px;
+  width: 95px;
+  border-radius: 50%;
+  align-items: center;
+}
+
+.infos{
+  margin-left: -15px;
+  font-size: 20px;
+p {
+  font-weight: lighter;
+  font-size: 14px;
+  color: $silver-gray;
+}
+}
+
+.price {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.validation{
+  display: flex;
+  color: $silver-gray;
+i {
+  margin: 10px;
+  font-size: 30px;
+  }
+}
+
+.fa-times:hover {
+  color: $salmon;
+}
+
+.fa-check:hover {
+  color: $eucalyptus;
+}
+
+
+
+
+
+
+
+
+
