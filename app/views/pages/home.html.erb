@@ -1,1 +1,43 @@
-<h1>Hello</h1>
+
+
+
+<div class="banner" style="background-image: url('http://bit.ly/2HwhFdx');">
+    <div class="banner-content">
+      <h1>Pimp My Wall</h1>
+      <p>make your wall unique</p>
+        <a class="btn success-color" href="/cocktails/4">Search</a>
+    </div>
+  </div>
+
+
+<div class="container">
+  <% @users.each do |artist| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-lg-3">
+
+       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= artist.photos[0]%>)">
+
+          <div class="card" href= user_path(artist)>
+            <div class="username">
+              <p><%= link_to "#{artist.username}", user_path(artist) %></p>
+            </div>
+            <div class="avatar">
+              <%= image_tag artist.avatar, alt:"avatar", class: "avatar_circle" %>
+            </div>
+            <!-- <div class="photos">
+              <%= image_tag artist.photos[0], alt:"photos", class: "photos_card" %>
+            </div> -->
+            <div class="location">
+              <p><%= artist.location %></p>
+            </div>
+            <div class="bio">
+              <p><%= artist.bio %></p>
+            </div>
+          </div>
+        </div>
+    </div>
+  <% end %>
+</div>
+
+
+
