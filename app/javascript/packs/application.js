@@ -9,4 +9,6 @@
 import "bootstrap";
 import "../plugins/flatpickr"
 
-console.log('Hello World from Webpacker')
+// User Edition
+import { showEditBioForm } from '../components/show_edit_forms';
+showEditBioForm();

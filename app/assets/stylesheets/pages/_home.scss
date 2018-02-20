@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  width: 185,5vh;
+  background-size: cover !important;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  height: 275px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+}
+
+.avatar_circle {
+  line-height: 0;
+  display: inline-block;
+  border-radius: 50%;
+  height: 50px;
+}
+
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
