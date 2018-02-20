@@ -1,0 +1,39 @@
+.card-order {
+  background-color: $white;
+  padding: 20px;
+  box-shadow: 2px 4px 14px -5px rgba(51,51,51,0.35);
+  margin: 7px;
+
+}
+
+.card-order:hover {
+  background-color: rgb(230,230,230);
+}
+
+.card-no-avatar{
+  display: flex;
+  justify-content: space-between
+}
+
+.avatar-dash {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.infos{
+  margin-left: -15px;
+  font-size: 20px;
+p {
+  font-weight: lighter;
+  font-size: 14px;
+  color: $silver-gray;
+}
+}
+
+.price {
+
+
+
+
+}

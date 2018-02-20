@@ -1,18 +1,47 @@
-<h1>My orders</h1>
+<div class="container">
+  <div class="orders">
+    <h1>My orders</h1>
+    <ul class="list-unstyled" style="margin-left: 30px">
+      <% @my_orders.each do |order| %>
+        <li class="card-order ">
+          <div class="avatar col-xs-2">
+            <%= image_tag order.customer.avatar, class: "avatar-dash"%>
+          </div>
+          <div class="card-no-avatar">
+            <div class="infos col-offset-2 col-xs-4 ">
+              <%= order.customer.username %>
+              <p> <%= order.date %> in <%= order.location %> </p>
+              Order: <p><%= order.work_asked %> </p>
+            </div>
+            <div class="price col-xs-2">
+              <%= order.performance.price %>
+            </div>
+            <div class="validation col-xs-2">
+              Icons validation
+            </div>
+          </div>
 
-<ul>
-  <% @my_orders.each do |order| %>
-    <li>
-      <%= order.date %> | Order: <%= order.work_asked %> in <%= order.location %> | Price: <%= order.performance.price %>€
-    </li>
-  <% end %>
-</ul>
 
-<h1>My Bookings</h1>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
 
-<ul>
-  <% @my_bookings.each do |booking| %>
-    <li> <%= booking.date %> || <%= booking.location %> || <%= booking.work_asked %> || Status: <%= booking.status %> </li>
-  <% end %>
-</ul>
+  <div class="bookings">
+    <h1>My Bookings</h1>
+    <ul class="list-unstyled" style="margin-left: 30px">
+      <% @my_bookings.each do |booking| %>
+        <li class="card-order">
+          <%= booking.date %> || <%= booking.location %> || <%= booking.work_asked %> || Status: <%= booking.status %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+
+
+
+</div>
