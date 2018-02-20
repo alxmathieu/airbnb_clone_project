@@ -12,13 +12,15 @@
 
 .card-no-avatar{
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  align-items: center;
 }
 
 .avatar-dash {
-  height: 90px;
-  width: 90px;
+  height: 95px;
+  width: 95px;
   border-radius: 50%;
+  align-items: center;
 }
 
 .infos{
@@ -32,8 +34,31 @@ p {
 }
 
 .price {
+  font-size: 25px;
+  font-weight: bolder;
+}
 
+.validation{
+  display: flex;
+  color: $silver-gray;
+i {
+  margin: 10px;
+  font-size: 30px;
+}
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

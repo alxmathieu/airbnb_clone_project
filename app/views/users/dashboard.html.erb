@@ -14,10 +14,12 @@
               Order: <p><%= order.work_asked %> </p>
             </div>
             <div class="price col-xs-2">
-              <%= order.performance.price %>
+              <%= order.performance.price %>€
             </div>
             <div class="validation col-xs-2">
-              Icons validation
+              <i class="fas fa-check"></i>
+              <i class="fas fa-times"></i>
+
             </div>
           </div>
 
@@ -33,7 +35,26 @@
     <ul class="list-unstyled" style="margin-left: 30px">
       <% @my_bookings.each do |booking| %>
         <li class="card-order">
-          <%= booking.date %> || <%= booking.location %> || <%= booking.work_asked %> || Status: <%= booking.status %>
+          <div class="avatar col-xs-2">
+            <%= image_tag booking.customer.avatar, class: "avatar-dash"%>
+          </div>
+          <div class="card-no-avatar">
+            <div class="infos col-offset-2 col-xs-4 ">
+              <%= booking.customer.username %>
+              <p> <%= booking.date %> in <%= booking.location %> </p>
+              Order: <p><%= booking.work_asked %> </p>
+            </div>
+            <div class="price col-xs-2">
+              <%= booking.performance.price %>€
+            </div>
+            <div class="validation col-xs-2">
+              <i class="fas fa-check"></i>
+              <i class="fas fa-times"></i>
+
+            </div>
+          </div>
+
+
         </li>
       <% end %>
     </ul>
