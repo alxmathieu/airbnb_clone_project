@@ -11,6 +11,7 @@ body {
 }
 
 .artist-identity {
+  min-height: 100px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba($silver-gray, 0.4);

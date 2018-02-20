@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update]
   get "/dashboard", to: "users#dashboard", as: "dashboard"
+  get "/performances/:id", to: "performances#show"
 end

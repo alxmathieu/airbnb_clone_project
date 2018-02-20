@@ -1,0 +1,13 @@
+<h1><%= @performance.description %></h1>
+
+<div class="container">
+  <h2>Book</h2>
+
+
+  <%= simple_form_for [@performance, @booking] do |f| %>
+    <% f.input :date %>
+    <%= f.input :location %>
+    <%= f.input :work_asked %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
