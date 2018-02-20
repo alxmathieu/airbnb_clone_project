@@ -3,7 +3,7 @@
 <ul>
   <% @my_orders.each do |order| %>
     <li>
-      <%= order.date %> | Order: <%= order.work_asked %> in <%= order.location %> | Price: <%= order.performance.price %>$
+      <%= order.date %> | Order: <%= order.work_asked %> in <%= order.location %> | Price: <%= order.performance.price %>€
     </li>
   <% end %>
 </ul>
@@ -13,6 +13,6 @@
 
 <ul>
   <% @my_bookings.each do |booking| %>
-    <li> <%= booking[0].date %> || <%= booking[0].location %> || <%= booking[0].work_asked %> || Status: <%= booking[0].status %> </li>
+    <li> <%= booking.date %> || <%= booking.location %> || <%= booking.work_asked %> || Status: <%= booking.status %> </li>
   <% end %>
 </ul>

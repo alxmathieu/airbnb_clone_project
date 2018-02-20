@@ -23,7 +23,7 @@ performance3 = Performance.create!(description: "ceiling painting", price: 300, 
 booking1 = Booking.create!(performance_id: performance1.id, user_id: user1.id, date: "28/03/2018", location: "Paris", work_asked: "Paint a reindeer", status: "Accepted")
 booking2 = Booking.create!(performance_id: performance2.id, user_id: user3.id, date: "19/03/2018", location: "London", work_asked: "Paint me like one of your French girl", status: "Declined")
 booking3 = Booking.create!(performance_id: performance3.id, user_id: user2.id, date: "28/05/2019", location: "Beijing", work_asked: "Paint a boat", status: "Pending")
-
+booking4 = Booking.create!(performance_id: performance3.id, user_id: user2.id, date: "30/06/2020", location: "New York", work_asked: "Paint a toaster", status: "Pending")
 
 
 
