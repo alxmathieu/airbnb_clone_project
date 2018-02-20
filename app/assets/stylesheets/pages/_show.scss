@@ -34,6 +34,37 @@ body {
   border-bottom: 1px solid rgba($silver-gray, 0.4);
 }
 
+.artist-perfs {
+  border-bottom: 1px solid rgba($silver-gray, 0.4);
+}
 .booking-form {
   margin-top: 100px;
+}
+
+.performance {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 70px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &:hover {
+    background-color: white;
+    cursor: pointer;
+  }
+}
+
+.perf-desc {
+
+}
+
+.perf-price {
+
+}
+
+.photo {
+  height: 175px;
+  background-size: cover !important;
+  background-position: center;
 }

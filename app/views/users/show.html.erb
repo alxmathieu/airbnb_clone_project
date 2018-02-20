@@ -16,20 +16,42 @@
         <p><%= @user.bio %></p>
       </div>
 
-      <h2>My performances</h2>
-      <ul>
-        <% @user.performances.each do |performance| %>
-          <li><%=  performance %></li>
-        <% end %>
-      </ul>
+      <div class="artist-perfs">
+        <h2>My performances</h2>
+        <ul class="list-unstyled">
+          <% @user.performances.each do |performance| %>
+            <%# @performance = performance  #for booking form ??%>
+            <li class="performance">
+              <div class="perf-desc">
+                <p><strong><%= performance.description %></strong></p>
+              </div>
+              <div class="perf-price">
+                <p><%= performance.price %> €</p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
 
-      <h2>Have a look at my work!</h2>
+      <div class="artist-photos">
+        <h2>Have a look at my work!</h2>
+        <div class="row">
+          <% @user.photos.each do |photo| %>
+            <div class="col-xs-12 col-sm-4">
+              <div class="photo" style="background-image: url(<%= photo %>);">
+                <a class="photo-link" href="#" ></a>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
 
     </div>
 
     <div class="col-md-4">
       <div class="booking-form">
         <h2>Book me</h2>
+
       </div>
     </div>
   </div>
