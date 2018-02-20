@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 puts 'Cleaning models...'
   Performance.destroy_all
   Booking.destroy_all
@@ -38,3 +39,4 @@ puts "Done!"
 # performance1 = Performance.create!(description: "Wall painting", price: 200, user_id: 2)
 # performance2 = Performance.create!(description: "Door painting", price: 100, user_id: 2)
 # performance3 = Performance.create!(description: "ceiling painting", price: 300, user_id: user1.id)
+
