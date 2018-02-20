@@ -23,7 +23,9 @@
             <%# @performance = performance  #for booking form ??%>
             <li class="performance">
               <div class="perf-desc">
-                <p><strong><%= performance.description %></strong></p>
+                <%= link_to performance_path(performance) do %>
+                  <p><strong><%= performance.description %></strong></p>
+                <% end %>
               </div>
               <div class="perf-price">
                 <p><%= performance.price %> €</p>
@@ -50,7 +52,7 @@
 
     <div class="col-md-4">
       <div class="booking-form">
-        <h2>Book me</h2>
+        <h2 class="text-center">Book me</h2>
 
       </div>
     </div>
