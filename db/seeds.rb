@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 puts 'Cleaning models...'
   Performance.destroy_all
   Booking.destroy_all
@@ -34,6 +35,7 @@ puts "Creating 3 bookings..."
   booking2 = Booking.create!(performance_id: performance2.id, user_id: user3.id, date: "19/03/2018", location: "London", work_asked: "Paint me like one of your French girl", status: "Declined")
   booking3 = Booking.create!(performance_id: performance3.id, user_id: user2.id, date: "28/05/2019", location: "Beijing", work_asked: "Paint a boat", status: "Pending")
 puts "Done!"
+
 
 #SEED Alexis
 # performance1 = Performance.create!(description: "Wall painting", price: 200, user_id: 2)
