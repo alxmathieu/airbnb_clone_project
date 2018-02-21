@@ -11,6 +11,7 @@ function getPerformanceId() {
   );
   event.currentTarget.children[0].classList.toggle("selected-perf");
   const performanceId = event.target.parentNode.dataset.performanceid;
+  console.log(performanceId);
   fillBookingPerformanceId(performanceId);
 };
 

@@ -3,9 +3,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.customer = current_user
     if @booking.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
-      render 'performances/show'
+      render 'users/show'
     end
   end
 
