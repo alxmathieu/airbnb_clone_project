@@ -26,7 +26,9 @@
               <%= simple_form_for(order, url: booking_path, method: "patch") do |f| -%>
                 <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                 <%= f.input :id, value: order.id, as: :hidden %>
-                <%= f.submit "Cancel" %>
+                <%= button_tag type: 'submit', class: "submit-icon" do %>
+                  <i class="fa fa-ban"></i>
+                <% end %>
               <% end -%>
             <% end %>
 
@@ -64,21 +66,29 @@
                 <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                   <%= f.input :status, input_html: {value: "Accepted"}, as: :hidden%>
                   <%= f.input :id, value: booking.id, as: :hidden %>
-                  <%= f.submit "Accept"%>
+                  <%= button_tag type: 'submit', class: "submit-icon" do %>
+                    <i class="fa fa-check"></i>
+                  <% end %>
                 <% end -%>
                 <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                     <%= f.input :status, input_html: {value: "Declined"}, as: :hidden%>
                     <%= f.input :id, value: booking.id, as: :hidden %>
-                    <%= f.submit "Decline" %>
+                    <%= button_tag type: 'submit', class: "submit-icon" do %>
+                      <i class="fa fa-times"></i>
+                    <% end %>
                   <% end %>
               <% end %>
               <% if booking.status == "Accepted" %>
                 <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                   <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                   <%= f.input :id, value: booking.id, as: :hidden %>
-                  <%= f.submit "Cancel" %>
+                  <%= button_tag type: 'submit', class: "submit-icon" do %>
+                    <i class="fa fa-ban"></i>
+                  <% end %>
                 <% end -%>
               <% end %>
+
+
             </div>
           </li>
         <% end %>
@@ -86,3 +96,14 @@
     </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
