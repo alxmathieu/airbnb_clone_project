@@ -19,9 +19,14 @@
       <div class="artist-perfs">
         <h2>My performances</h2>
         <ul class="list-unstyled">
-          <% @user.performances.each do |performance| %>
+          <% @user.performances.each_with_index do |performance, index| %>
             <%= link_to "", class:"js-perf-link", data:{performanceId: performance.id, perfName: performance.description} do %>
-              <li class="performance">
+              <% if index == 0 %>
+                <li class="performance selected-perf">
+              <% else %>
+                <li class="performance">
+              <% end %>
+              <!-- <li class="performance"> -->
                   <div class="perf-desc">
                     <p><strong><%= performance.description %></strong></p>
                   </div>
@@ -51,7 +56,7 @@
 
     <div class="col-md-4">
       <div class="booking-form">
-        <h2 class="text-center">Book me for <span id="booking-title">...</span></h2>
+        <h2 class="text-center">Book me for <span id="booking-title"><%= @user.performances.first.description %></span></h2>
         <%= simple_form_for @booking do |f| %>
           <%= f.hidden_field :performance_id %>
           <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>

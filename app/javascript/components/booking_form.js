@@ -3,7 +3,6 @@ function fillBookingPerformanceId(id, name) {
   const field = document.getElementById("booking_performance_id");
   const title = document.getElementById("booking-title");
   field.value = id;
-  title.classList.add("booking-desc");
   title.innerHTML = name;
 };
 
