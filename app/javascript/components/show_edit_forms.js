@@ -11,3 +11,17 @@ function showEditBioForm() {
 };
 
 export{showEditBioForm};
+
+function showCreatePerfForm() {
+
+  const createPerfBtn = document.getElementById("create-perf-btn")
+  const createPerfForm = document.getElementById("add-perf-form")
+
+  createPerfBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    createPerfForm.classList.remove("hidden");
+  });
+}
+
+export{showCreatePerfForm};
+

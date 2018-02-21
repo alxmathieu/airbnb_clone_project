@@ -23,12 +23,27 @@
     <div class="row">
       <div class="title-card">
        <h2> My Perfs</h2>
-        <%= link_to "Add Performance", "#", class: "add-btn" %>
+        <%= link_to "Add Performance", "#", class: "add-btn", id: "create-perf-btn" %>
+      </div>
+      <div id="add-perf-form" class="hidden">
+        <%= simple_form_for(@performance) do |f| %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.submit "Create Performance", class: "edit-btn" %>
+        <% end %>
       </div>
       <%  @user.performances.each do |performance|%>
         <div class="card-performance">
           <h3> <%=  performance.description %> </h3>
+          <h4> Price: <%= performance.price %> </h4>
           <%= link_to "Edit Performance", "#", class: "edit-btn" %>
+          <div id="edit-perf-form" class="hidden">
+          <%= simple_form_for(performance) do |f| %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.submit "Create Performance", class: "edit-btn" %>
+          </div>
+          <% end %>
         </div>
       <% end %>
     </div>

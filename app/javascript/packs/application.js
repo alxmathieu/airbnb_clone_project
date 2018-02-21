@@ -13,4 +13,6 @@ import "../plugins/flatpickr"
 import { showEditBioForm } from '../components/show_edit_forms';
 showEditBioForm();
 
-
+// Creating Performance
+import { showCreatePerfForm } from '../components/show_edit_forms';
+showCreatePerfForm();
