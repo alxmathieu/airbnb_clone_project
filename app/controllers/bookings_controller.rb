@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def create
+    raise
     @booking = Booking.new(booking_params)
     @booking.customer = current_user
     if @booking.save

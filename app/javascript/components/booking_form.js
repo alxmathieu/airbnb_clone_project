@@ -1,7 +1,10 @@
 // Booking form on artist page //
-function fillBookingPerformanceId(id) {
+function fillBookingPerformanceId(id, name) {
   const field = document.getElementById("booking_performance_id");
+  const title = document.getElementById("booking-title");
   field.value = id;
+  title.classList.add("booking-desc");
+  title.innerHTML = name;
 };
 
 function getPerformanceId() {
@@ -10,9 +13,9 @@ function getPerformanceId() {
     a.classList.remove("selected-perf")
   );
   event.currentTarget.children[0].classList.toggle("selected-perf");
-  const performanceId = event.target.parentNode.dataset.performanceid;
-  console.log(performanceId);
-  fillBookingPerformanceId(performanceId);
+  const performanceId = event.currentTarget.dataset.performanceid;
+  const performanceName = event.currentTarget.dataset.perfname;
+  fillBookingPerformanceId(performanceId, performanceName);
 };
 
 function bookingForm() {
