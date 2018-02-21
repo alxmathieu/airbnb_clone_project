@@ -26,13 +26,13 @@ puts "Done!"
 
 puts "Creating 3 Performances..."
   performance1 = Performance.create!(description: "Wall painting", price: 200, user_id: user1.id)
-  performance2 = Performance.create!(description: "door painting", price: 100, user_id: user2.id)
-  performance3 = Performance.create!(description: "ceiling painting", price: 300, user_id: user1.id)
+  performance2 = Performance.create!(description: "Door painting", price: 100, user_id: user2.id)
+  performance3 = Performance.create!(description: "Ceiling painting", price: 300, user_id: user1.id)
 puts "Done!"
 
 puts "Creating 3 bookings..."
   booking1 = Booking.create!(performance_id: performance1.id, user_id: user1.id, date: "28/03/2018", location: "Paris", work_asked: "Paint a reindeer", status: "Accepted")
-  booking2 = Booking.create!(performance_id: performance2.id, user_id: user3.id, date: "19/03/2018", location: "London", work_asked: "Paint me like one of your French girl", status: "Declined")
+  booking2 = Booking.create!(performance_id: performance2.id, user_id: user6.id, date: "19/03/2018", location: "London", work_asked: "Paint me like one of your French girl", status: "Declined")
   booking3 = Booking.create!(performance_id: performance3.id, user_id: user2.id, date: "28/05/2019", location: "Beijing", work_asked: "Paint a boat")
 puts "Done!"
 
