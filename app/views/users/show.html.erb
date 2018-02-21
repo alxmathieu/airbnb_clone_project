@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-8">
       <div class="artist-identity">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/AlexisPipieri", alt: @user.username, class: "avatar-large" %>
+        <%= image_tag @user.avatar, alt: @user.username, class: "avatar-large" %>
         <div class="artist-infos">
           <h1><%= @user.username %></h1>
           <p><%= @user.location %></p>
