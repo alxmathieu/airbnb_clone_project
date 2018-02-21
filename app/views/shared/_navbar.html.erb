@@ -10,14 +10,33 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Commandes", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Are you an Artist ? ", edit_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if current_user.is_artist %>
+        <%= link_to "Dashboard", dashboard_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+
+        <%= link_to "My page", edit_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+      <% else %>
+        <%= link_to "Commandes", dashboard_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+        <div class="artist-btn-wrapper">
+          <%= link_to "Are you an Artist ? ", edit_user_path(current_user), class: "artist-btn" %>
+        </div>
+      <% end %>
+
+
+
+
+
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
 
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag current_user.avatar, alt:"avatar",class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+
+
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
