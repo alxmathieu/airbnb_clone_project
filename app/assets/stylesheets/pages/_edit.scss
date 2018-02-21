@@ -56,28 +56,69 @@
 
 
 .card-photos {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
   margin: 20px;
   height: 50vh;
+  padding: 0px;
 
   .photo-style {
-    height: 80%;
+    display: block;
+    height: 100%;
     background-size: cover;
     background-position: center;
     box-shadow: 1px 1px 1px $silver-gray;
-    flex: 1 1 auto;
   }
 
-  a {
-    width: 130px;
-    font-weight: lighter;
-    text-align: center;
-    align-self: center;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
   }
 
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  &:hover {
+    opacity:1;
+  }
+}
+
+.delete-photos {
+  color: rgba(0,0,0,0.9);
+  transition: .5s ease;
+  font-size: 50px;
+  margin: 10px;
+
+  p {
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: rgba(0,0,0,1);
+    text-decoration: none;
+  }
+
+}
+
+
+
 
 .card-performance {
   padding: 30px;

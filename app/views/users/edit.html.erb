@@ -20,7 +20,7 @@
         <%= f.input :bio %>
 
           <button type= "submit" class='edit-btn'>
-            <i class="fas fa-check-square edit-pen"></i>
+            <i class="fas fa-check-square"></i>
           </button>
       <% end %>
     </div>
@@ -70,7 +70,12 @@
     <% @user.photos.each do |photo|%>
       <div class="card-photos col-xs-4">
         <div class= "photo-style" style= "background-image : url(<%= photo %>)"></div>
-        <%= link_to "Delete Picture", "#", class: "delete-btn" %>
+        <div class="overlay">
+          <div class="delete-photos">
+          <%= link_to "", "#", class: "fas fa-trash trash-btn" %>
+          <p> Delete </p>
+          </div>
+        </div>
       </div>
     <% end %>
     </div>
