@@ -18,16 +18,22 @@
     <div id="edit-form-bio" class="hidden">
       <%= simple_form_for(@user) do |f| %>
         <%= f.input :bio %>
-        <%= f.submit "Update Bio", class: "edit-btn" %>
+
+          <button type= "submit" class='edit-btn'>
+            <i class="fas fa-check-square edit-pen"></i>
+          </button>
       <% end %>
     </div>
   </div>
+
+
+
 
   <div class="wrapper-edit container-fluid">
     <div class="row">
       <div class="title-card">
        <h2> My Perfs</h2>
-        <%= link_to "Add", "#", class: "add-btn", id: "create-perf-btn" %>
+        <%= link_to "", "#", class: "fas fa-plus-square add-plus", id: "create-perf-btn" %>
       </div>
       <div id="add-perf-form" class="hidden">
         <%= simple_form_for(@performance) do |f| %>
@@ -40,8 +46,9 @@
         <div class="card-performance">
           <h3> <%=  performance.description %> </h3>
           <h4> Price: <%= performance.price %> </h4>
-          <%= link_to "Edit Performance", "#", class: "edit-btn" %>
+          <%= link_to "", "#", class: "fas fa-pen-square edit-pen" %>
           <div id="edit-perf-form" class="hidden">
+
           <%= simple_form_for(performance) do |f| %>
             <%= f.input :description %>
             <%= f.input :price %>
