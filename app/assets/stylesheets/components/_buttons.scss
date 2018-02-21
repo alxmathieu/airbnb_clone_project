@@ -34,13 +34,13 @@
 }
 
 .trash-btn {
-  color: rgba(0,0,0,0.7);
+  color: rgba(255,255,255,0.7);
   font-size: 50px;
   margin: 10px;
   transition: .5s ease;
 
   &:hover {
-    color: rgba(0,0,0,0.8);
+    color: rgba(255,255,255,0.8);
     text-decoration: none;
   }
 
