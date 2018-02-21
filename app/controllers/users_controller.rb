@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @my_orders = current_user.bookings
-    @my_bookings = Booking.joins(:performance).where(performances: { user_id: current_user.id })
+    @my_orders = current_user.bookings.order(status: :DESC)
+    @my_bookings = Booking.joins(:performance).where(performances: { user_id: current_user.id }).order(status: :DESC)
   end
 
   private

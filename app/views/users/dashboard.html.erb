@@ -5,27 +5,33 @@
       <% @my_orders.each do |order| %>
 
         <li class="card-order row">
-          <div class="avatar col-xs-2">
+          <div class="avatar-dash col-xs-12 col-md-2">
             <%= link_to(user_path(order.customer)) do %>
             <%= image_tag order.customer.avatar, class: "avatar-dash"%>
             <% end %>
           </div>
-          <div class="card-no-avatar">
-            <div class="infos col-offset-2 col-xs-4 ">
-              <%= order.customer.username %>
-              <p> <%= order.date %> in <%= order.location %> </p>
-              Order: <p><%= order.work_asked %> </p>
-            </div>
-            <div class="price col-xs-2">
-              <%= order.performance.price %>€
-            </div>
-            <div class="validation col-xs-2">
-              <i class="fas fa-times"></i>
-
-            </div>
+          <div class="infos col-xs-12 col-md-4">
+            <%= order.customer.username %>
+            <p> <%= order.date %> in <%= order.location %> </p>
+            Order: <p><%= order.work_asked %> </p>
           </div>
+          <div class="price col-xs-4 col-md-2">
+            <%= order.performance.price %>€
+          </div>
+          <div class="status col-xs-4 col-md-2">
+            <%= order.status %>
+          </div>
+          <div class="validation col-xs-4 col-md-2">
+            <% unless order.status == "Cancelled" %>
+              <%= simple_form_for(order, url: booking_path, method: "patch") do |f| -%>
+                <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
+                <%= f.input :id, value: order.id, as: :hidden %>
+                <%= f.submit "Cancel" %>
+              <% end -%>
+            <% end %>
 
 
+          </div>
         </li>
       <% end %>
     </ul>
@@ -36,38 +42,47 @@
       <h1>My Bookings</h1>
       <ul class="list-unstyled" style="margin-left: 30px">
         <% @my_bookings.each do |booking| %>
-          <li class="card-order">
-            <div class="avatar col-xs-2">
+          <li class="card-order row">
+            <div class="avatar-dash col-xs-12 col-md-2">
               <%= link_to(user_path(booking.customer)) do %>
               <%= image_tag booking.customer.avatar, class: "avatar-dash"%>
               <% end %>
             </div>
-            <div class="card-no-avatar">
-              <div class="infos col-offset-2 col-xs-4 ">
-                <%= booking.customer.username %>
-                <p> <%= booking.date %> in <%= booking.location %> </p>
-                Order: <p><%= booking.work_asked %> </p>
-              </div>
-              <div class="price col-xs-2">
-                <%= booking.performance.price %>€
-              </div>
-              <div class="validation col-xs-2">
-                <i class="fas fa-check"></i>
-                <i class="fas fa-times"></i>
-
-              </div>
+            <div class="infos col-xs-12 col-md-4">
+              <%= booking.customer.username %>
+              <p> <%= booking.date %> in <%= booking.location %> </p>
+              Order: <p><%= booking.work_asked %> </p>
             </div>
-
-
+            <div class="price col-xs-4 col-md-2">
+              <%= booking.performance.price %>€
+            </div>
+            <div class="status col-xs-4 col-md-2">
+              <%= booking.status %>
+            </div>
+            <div class="validation col-xs-4 col-md-2">
+              <% if booking.status == "Pending" %>
+                <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
+                  <%= f.input :status, input_html: {value: "Accepted"}, as: :hidden%>
+                  <%= f.input :id, value: booking.id, as: :hidden %>
+                  <%= f.submit "Accept"%>
+                <% end -%>
+                <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
+                    <%= f.input :status, input_html: {value: "Declined"}, as: :hidden%>
+                    <%= f.input :id, value: booking.id, as: :hidden %>
+                    <%= f.submit "Decline" %>
+                  <% end %>
+              <% end %>
+              <% if booking.status == "Accepted" %>
+                <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
+                  <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
+                  <%= f.input :id, value: booking.id, as: :hidden %>
+                  <%= f.submit "Cancel" %>
+                <% end -%>
+              <% end %>
+            </div>
           </li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
-
-
-
-
-
 </div>
