@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @performance = Performance.new
   end
 
   def update

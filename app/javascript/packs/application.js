@@ -20,3 +20,9 @@ import { bookingForm } from '../components/booking_form';
 if (document.querySelectorAll(".js-perf-link")) {
   bookingForm()
 };
+
+// Creating Performance
+import { showCreatePerfForm } from '../components/show_edit_forms';
+if (document.getElementById("create-perf-btn")) {
+  showCreatePerfForm();
+};

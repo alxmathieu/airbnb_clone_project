@@ -6,12 +6,12 @@
 
         <li class="card-order row">
           <div class="avatar-dash col-xs-12 col-md-2">
-            <%= link_to(user_path(order.customer)) do %>
-            <%= image_tag order.customer.avatar, class: "avatar-dash"%>
+            <%= link_to(user_path(order.performance.artist)) do %>
+            <%= image_tag order.performance.artist.avatar, class: "avatar-dash"%>
             <% end %>
           </div>
           <div class="infos col-xs-12 col-md-4">
-            <%= order.customer.username %>
+            <%= order.performance.artist.username %>
             <p> <%= order.date %> in <%= order.location %> </p>
             Order: <p><%= order.work_asked %> </p>
           </div>
@@ -26,7 +26,9 @@
               <%= simple_form_for(order, url: booking_path, method: "patch") do |f| -%>
                 <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                 <%= f.input :id, value: order.id, as: :hidden %>
-                <%= f.submit "Cancel" %>
+                <%= button_tag type: 'submit', class: "submit-icon" do %>
+                  <i class="fa fa-ban"></i>
+                <% end %>
               <% end -%>
             <% end %>
 
@@ -64,21 +66,29 @@
                 <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                   <%= f.input :status, input_html: {value: "Accepted"}, as: :hidden%>
                   <%= f.input :id, value: booking.id, as: :hidden %>
-                  <%= f.submit "Accept"%>
+                  <%= button_tag type: 'submit', class: "submit-icon" do %>
+                    <i class="fa fa-check"></i>
+                  <% end %>
                 <% end -%>
                 <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                     <%= f.input :status, input_html: {value: "Declined"}, as: :hidden%>
                     <%= f.input :id, value: booking.id, as: :hidden %>
-                    <%= f.submit "Decline" %>
+                    <%= button_tag type: 'submit', class: "submit-icon" do %>
+                      <i class="fa fa-times"></i>
+                    <% end %>
                   <% end %>
               <% end %>
               <% if booking.status == "Accepted" %>
                 <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                   <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                   <%= f.input :id, value: booking.id, as: :hidden %>
-                  <%= f.submit "Cancel" %>
+                  <%= button_tag type: 'submit', class: "submit-icon" do %>
+                    <i class="fa fa-ban"></i>
+                  <% end %>
                 <% end -%>
               <% end %>
+
+
             </div>
           </li>
         <% end %>
@@ -86,3 +96,14 @@
     </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+

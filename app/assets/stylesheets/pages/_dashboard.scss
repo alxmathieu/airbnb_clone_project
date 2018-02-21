@@ -16,6 +16,9 @@
 
 .card-order:hover {
   background-color: rgb(230,230,230);
+.submit-icon{
+  background-color: rgb(230,230,230);
+}
 }
 
 .avatar-dash {
@@ -57,21 +60,23 @@ i {
   }
 }
 
-.fa-times:hover {
+.fa-times:hover, .fa-ban:hover{
   color: $salmon;
+}
+
+.submit-icon{
+  background-color: $white;
+  border: 0px;
+&:hover{
+  background-color: rgb(230,230,230);
+}
+
 }
 
 .fa-check:hover {
   color: $eucalyptus;
 }
 
-.approved{
-  color: $eucalyptus;
-}
-
-.declined{
-  color: $salmon;
-}
 
 
 
