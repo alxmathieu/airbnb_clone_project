@@ -9,8 +9,8 @@
 
 
 puts 'Cleaning models...'
-  Performance.destroy_all
   Booking.destroy_all
+  Performance.destroy_all
   User.destroy_all
 puts 'Done!'
 
