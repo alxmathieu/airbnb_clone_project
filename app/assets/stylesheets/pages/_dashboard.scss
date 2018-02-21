@@ -7,14 +7,20 @@
   position: relative;
 }
 
+.for-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
 .card-order:hover {
   background-color: rgb(230,230,230);
 }
 
 .avatar-dash {
-  height: 15vh;
-  width: 15vh;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
 }
 
@@ -31,9 +37,12 @@ p {
 .price {
   font-size: 25px;
   font-weight: bolder;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+}
+
+.status{
+  font-size: 25px;
+  font-weight: bolder;
 }
 
 .validation{
@@ -44,6 +53,7 @@ p {
 i {
   margin: 10px;
   font-size: 30px;
+
   }
 }
 
@@ -55,7 +65,13 @@ i {
   color: $eucalyptus;
 }
 
+.approved{
+  color: $eucalyptus;
+}
 
+.declined{
+  color: $salmon;
+}
 
 
 
