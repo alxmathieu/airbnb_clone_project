@@ -6,12 +6,12 @@
 
         <li class="card-order row">
           <div class="avatar-dash col-xs-12 col-md-2">
-            <%= link_to(user_path(order.customer)) do %>
-            <%= image_tag order.customer.avatar, class: "avatar-dash"%>
+            <%= link_to(user_path(order.performance.artist)) do %>
+            <%= image_tag order.performance.artist.avatar, class: "avatar-dash"%>
             <% end %>
           </div>
           <div class="infos col-xs-12 col-md-4">
-            <%= order.customer.username %>
+            <%= order.performance.artist.username %>
             <p> <%= order.date %> in <%= order.location %> </p>
             Order: <p><%= order.work_asked %> </p>
           </div>
