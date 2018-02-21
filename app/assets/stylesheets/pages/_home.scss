@@ -10,6 +10,10 @@
   justify-content: center;
 }
 
+.banner-content {
+  text-align: center;
+}
+
 .card {
   height: 275px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -38,6 +42,10 @@
   position: absolute;
   top: 15px;
   left: 70px;
+a{
+  color: $white !important;
+  text-decoration: none;
+}
 }
 
 .location {
@@ -58,9 +66,16 @@
 
 .bio {
   position: absolute;
-  height: 20px;
-  bottom: 10px;
-  display: flex;
+  bottom: 5px;
+  left: 50px;
+  text-align: center;
+  background-color: rgba(10,10,10,0.5);
+  padding: 3px;
+  color: $white;
+  font-size: 13px;
+
+
+
 }
 
 
