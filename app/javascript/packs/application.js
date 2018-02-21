@@ -11,8 +11,18 @@ import "../plugins/flatpickr"
 
 // User Edition
 import { showEditBioForm } from '../components/show_edit_forms';
-showEditBioForm();
+if (document.getElementById("edit-form-bio")) {
+  showEditBioForm()
+};
+
+// Booking form on artist page
+import { bookingForm } from '../components/booking_form';
+if (document.querySelectorAll(".js-perf-link")) {
+  bookingForm()
+};
 
 // Creating Performance
 import { showCreatePerfForm } from '../components/show_edit_forms';
-showCreatePerfForm();
+if (document.getElementById("create-perf-btn")) {
+  showCreatePerfForm();
+};

@@ -1,13 +1,12 @@
 class BookingsController < ApplicationController
   def create
-    @performance = Performance.find(params[:performance_id])
+    raise
     @booking = Booking.new(booking_params)
-    @booking.performance = @performance
     @booking.customer = current_user
     if @booking.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
-      render 'performances/show'
+      render 'users/show'
     end
   end
 
@@ -21,6 +20,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :location, :work_asked, :status)
+    params.require(:booking).permit(:performance_id, :date, :location, :work_asked)
   end
 end
