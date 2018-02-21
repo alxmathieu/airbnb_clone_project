@@ -7,7 +7,7 @@ function fillBookingPerformanceId(id, name) {
   title.innerHTML = name;
 };
 
-function getPerformanceId() {
+const getPerformanceId = (event) => {
   event.preventDefault();
   document.querySelectorAll(".selected-perf").forEach( a =>
     a.classList.remove("selected-perf")
