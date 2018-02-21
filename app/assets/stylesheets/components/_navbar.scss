@@ -75,3 +75,29 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.artist-btn {
+  background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
+  border-radius: 30px;
+  margin: 15px;
+  font-size: 15px;
+  padding: 10px 30px;
+  box-shadow: 1px 1px 1px $silver-gray;
+  text-align: center;
+  text-decoration: none !important;
+  color: white !important;
+  font-weight: 400;
+
+  &:hover {
+    padding: 12px 32px;
+    font-weight: bolder !important;
+
+  }
+}
+
+.artist-btn-wrapper {
+  width: 225px;
+  display: flex;
+  justify-content: center;
+
+}

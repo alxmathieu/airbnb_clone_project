@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :create]
   resources :users, only: [:show, :edit, :update]
   get "/dashboard", to: "users#dashboard", as: "dashboard"
-  # get "/performances/:id", to: "performances#show"
+  patch "/dashboard", to: "bookings#update", as: "booking"
 end
