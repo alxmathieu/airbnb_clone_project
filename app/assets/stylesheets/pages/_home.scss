@@ -1,17 +1,31 @@
 // Specific CSS for your home-page
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .banner {
+  position: relative;
   color: white;
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 70px);
   width: 185,5vh;
   background-size: cover !important;
-  background-position: bottom;
+  background-position: center;
   display: flex;
   justify-content: center;
 }
 
 .banner-content {
+  position: absolute;
+  top: 140px;
   text-align: center;
+  h1 {
+    font-size: 90px;
+  }
+  h2 {
+    font-size: 50px;
+  }
 }
 
 .card {
@@ -73,9 +87,6 @@ a{
   padding: 3px;
   color: $white;
   font-size: 13px;
-
-
-
 }
 
 
@@ -96,4 +107,13 @@ a{
 .row {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.content1 {
+  min-height: 100%;
+  padding-bottom: 20px;
+}
+
+.content2 {
+  padding-bottom: 100px;
 }
