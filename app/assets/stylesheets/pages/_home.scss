@@ -25,10 +25,42 @@
 }
 
 .avatar_circle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   line-height: 0;
   display: inline-block;
   border-radius: 50%;
   height: 50px;
+}
+
+.username {
+  position: absolute;
+  top: 15px;
+  left: 70px;
+}
+
+.location {
+  position: absolute;
+  top: 35px;
+  left: 70px;
+  text-align: center;
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.full-card {
+  background-color: $salmon;
+  padding-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.bio {
+  position: absolute;
+  height: 20px;
+  bottom: 10px;
+  display: flex;
 }
 
 
