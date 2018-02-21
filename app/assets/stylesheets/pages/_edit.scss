@@ -1,5 +1,49 @@
+.header-edit {
+  display: flex;
+  justify-content: flex-start;
+  align-item: center;
+  text-align: center;
+  height: 30vh;
+  padding: 20px;
+  padding-left: 200px;
+  background-color: rgba(0,0,0,0.3);
 
 
+  .avatar-edit {
+    margin: 15px;
+    flex: 0 0 auto;
+    box-shadow: 1px 1px 1px black;
+  }
+}
+
+.header-text {
+
+  align-self: center;
+  text-align: left;
+
+  p {
+    flex: 0 1 auto;
+    margin: 0px;
+    font-size: 15px;
+  }
+
+  h1 {
+    flex: 0 1 auto;
+    margin: 0px;
+  }
+
+}
+
+
+
+.title-card {
+  padding: 10px 0px 10px 30px;
+  margin: 15px;
+  height: 10vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
 
 .wrapper-edit {
   padding: 10px;
@@ -7,16 +51,9 @@
   margin: 20px 10px;
   padding: 20px;
   box-shadow: 1px 1px 3px $silver-gray;
+  border-radius: 3px;
 }
 
-.title-card {
-  padding: 30px;
-  margin: 15px;
-  height: 10vh;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
 
 .card-photos {
   display: flex;

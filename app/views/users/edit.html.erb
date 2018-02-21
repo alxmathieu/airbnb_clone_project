@@ -1,14 +1,18 @@
-<div class="container">
-
-  <div class="title-card">
-    <%= image_tag @user.avatar, alt: "Avatar", width: 50 %>
-    <h1> <%= @user.username %> </h1>
+<div class="header-edit">
+    <%= image_tag @user.avatar, alt: "Avatar", class: "avatar-edit" %>
+  <div class="header-text">
+      <h1> <%= @user.username %> </h1>
+      <p> - <em>Edit here your own profile page</em> 🤔</p>
   </div>
+</div>
 
+
+
+<div class="container">
   <div class="wrapper-edit">
     <div class="title-card">
       <h2> My Bio </h2>
-      <%= link_to "Edit Bio", "#", class: "edit-btn", id:"edit-bio-btn" %>
+      <%= link_to "", "#", class: "fas fa-pen-square edit-pen", id:"edit-bio-btn" %>
     </div>
     <p> <%= @user.bio %> </p>
     <div id="edit-form-bio" class="hidden">
@@ -23,7 +27,7 @@
     <div class="row">
       <div class="title-card">
        <h2> My Perfs</h2>
-        <%= link_to "Add Performance", "#", class: "add-btn", id: "create-perf-btn" %>
+        <%= link_to "Add", "#", class: "add-btn", id: "create-perf-btn" %>
       </div>
       <div id="add-perf-form" class="hidden">
         <%= simple_form_for(@performance) do |f| %>
@@ -52,7 +56,7 @@
   <div class="wrapper-edit">
     <div class="title-card">
       <h2> My Photos</h2>
-      <%= link_to "Add Photo", "#", class: "add-btn" %>
+      <%= link_to "Add", "#", class: "add-btn" %>
     </div>
 
     <div class="row">

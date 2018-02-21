@@ -1,9 +1,22 @@
+.edit-pen {
+  color: linear-gradient(to right, #5cc2f6, #68b9f2, #74afed, #7fa5e5, #8a9bdc);
+  font-size: 30px;
+  margin: 10px;
+  text-shadow:
+
+  &:hover {
+    color: $silver-gray;
+    text-decoration: none;
+  }
+}
+
 
 .add-btn {
   background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
   border-radius: 30px;
   margin: 15px;
-  font-size: 10px;
+  font-size: 15px;
+  font-weight: bold;
   padding: 10px 30px;
   color: white;
   text-decoration: none;
@@ -42,6 +55,7 @@
   padding: 10px 30px;
   width-max: 50px;
   color: white;
+  font-weight: 600;
   text-decoration: none;
   box-shadow: 1px 1px 1px $silver-gray;
   text-align: center;
