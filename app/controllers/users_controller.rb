@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #@booking = Booking.new
+    @booking = Booking.new
   end
 
   def edit

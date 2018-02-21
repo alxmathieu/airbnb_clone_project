@@ -1,8 +1,6 @@
 class BookingsController < ApplicationController
   def create
-    @performance = Performance.find(params[:performance_id])
     @booking = Booking.new(booking_params)
-    @booking.performance = @performance
     @booking.customer = current_user
     if @booking.save
       redirect_to root_path
@@ -14,6 +12,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :location, :work_asked)
+    params.require(:booking).permit(:performance_id, :date, :location, :work_asked)
   end
 end

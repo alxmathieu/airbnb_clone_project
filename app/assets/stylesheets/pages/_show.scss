@@ -37,6 +37,10 @@ body {
 
 .artist-perfs {
   border-bottom: 1px solid rgba($silver-gray, 0.4);
+  a {
+    color: #333333;
+    text-decoration: none;
+  }
 }
 .booking-form {
   margin-top: 100px;
@@ -51,17 +55,10 @@ body {
   align-items: center;
   justify-content: space-between;
   &:hover {
+    color: black;
     background-color: white;
     cursor: pointer;
   }
-}
-
-.perf-desc {
-
-}
-
-.perf-price {
-
 }
 
 .photo {
@@ -80,4 +77,9 @@ body {
   z-index: 2;
   background: black;
   opacity: 0;
+}
+
+.selected-perf {
+  background-color: white !important;
+  border: 1px solid rgba($eucalyptus, 0.5);
 }
