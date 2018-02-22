@@ -73,7 +73,7 @@
     <ul class="list-unstyled row">
       <% @my_orders.each do |order| %>
         <li>
-          <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="card-order">
               <%= link_to(user_path(order.performance.artist)) do %>
                 <%= image_tag order.performance.artist.avatar, class: "avatar-dash"%>
@@ -96,8 +96,10 @@
                   <h2><%= order.performance.price %> €</h2>
                   <% if order.status == "Accepted" %>
                     <h2 class="status-accepted">Accepted</h2>
-                  <% else %>
+                  <% elsif order.status == "Declined" %>
                     <h2 class="status-declined">Declined</h2>
+                  <% else %>
+                    <h2 class="status-cancelled">Cancelled</h2>
                   <% end %>
                 </div>
               <% end %>
