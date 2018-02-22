@@ -8,5 +8,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
+  include PgSearch
+  pg_search_scope :search_username_performances,
+    against: [ :username, :bio, :location],
+    associated_against: {
+      performances: [ :description, :price ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end

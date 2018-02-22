@@ -2,11 +2,16 @@
   <div class="banner-content">
     <h1>Pimp My Wall</h1>
     <h2>make your wall unique</h2>
-    <!-- <a class="btn success-color" href="#">Search</a> -->
+    <%= form_tag root_path, method: :get, id: "search-form" do %>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Wall painting ..." name="query">
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="button"  >Search</button>
+      </span>
+    </div>
+    <% end %>
   </div>
 </div>
-
-
 <div class="container">
   <div class="row">
     <% @users.each do |artist| %>
@@ -23,9 +28,13 @@
               <p><i class="fas fa-map-marker-alt"></i> <%= artist.location %></p>
             </div>
           </div>
-          <a class="card-link" href=<%= user_path(artist) %>></a>
+          <div class="location">
+            <p><i class="fas fa-map-marker-alt"></i> <%= artist.location %></p>
           </div>
         </div>
+        <a class="card-link" href=<%= user_path(artist) %>></a>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

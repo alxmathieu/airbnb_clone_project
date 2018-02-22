@@ -1,16 +1,19 @@
-.card-booking{
-  background-color: white;
-}
 
 .card-price-status, .validation{
   display: flex;
 }
 
-.card-booking {
+.card-order {
   text-align: center;
   margin-top: 30px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background-color: white;
+  min-height: 400px;
+}
+
+.card-booking{
+  min-height: 570px;
 }
 
 .card-username {
@@ -32,13 +35,15 @@ p{
   justify-content: space-around;
   border-bottom: 1px solid $light-gray;
   padding-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.card-booking:hover {
+.card-order:hover {
   background-color: rgb(230,230,230);
-.submit-icon{
-  background-color: rgb(230,230,230);
-}
+  .submit-icon{
+    background-color: rgb(230,230,230);
+  }
 }
 
 .avatar-dash {
@@ -53,20 +58,18 @@ p{
   color: $silver-gray;
   justify-content: space-around;
   align-items: center;
-i {
-  margin: 10px;
-  font-size: 30px;
-
-  }
+  i {
+    margin: 10px;
+    font-size: 30px;
+    }
 }
 
 .submit-icon{
   background-color: $white;
   border: 0px;
-&:hover{
-  background-color: rgb(230,230,230);
-}
-
+  &:hover{
+    background-color: rgb(230,230,230);
+  }
 }
 
 .fa-check:hover {
@@ -77,9 +80,29 @@ i {
   color: $salmon;
 }
 
+.map{
+  padding-top: 15px;
+}
 
+.declined-order{
+  margin: 15px 0;
+  background-color: $eucalyptus;
+  color: white;
+  a {text-decoration: none;
+  font-weight: bold;
+  color: white;
+  }
+  &:hover {
+    background-color: #2ec38c;
+    font-weight: bold;
+    color: white;
+  }
+}
 
+.status-accepted{
+  color: $eucalyptus;
+}
 
-
-
-
+.status-declined{
+  color: $salmon;
+}
