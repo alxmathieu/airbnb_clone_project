@@ -36,7 +36,7 @@
                       <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                         <%= f.input :status, input_html: {value: "Accepted"}, as: :hidden%>
                         <%= f.input :id, value: booking.id, as: :hidden %>
-                        <%= button_tag type: 'submit', class: "submit-icon" do %>
+                        <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Accept'} do %>
                           <i class="fa fa-check"></i>
                         <% end %>
                       <% end -%>
@@ -45,7 +45,7 @@
                       <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                         <%= f.input :status, input_html: {value: "Declined"}, as: :hidden%>
                         <%= f.input :id, value: booking.id, as: :hidden %>
-                        <%= button_tag type: 'submit', class: "submit-icon" do %>
+                        <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Decline'} do %>
                           <i class="fa fa-times"></i>
                         <% end %>
                       <% end %>
@@ -55,7 +55,7 @@
                     <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                       <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                       <%= f.input :id, value: booking.id, as: :hidden %>
-                      <%= button_tag type: 'submit', class: "submit-icon" do %>
+                      <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Cancel booking'} do %>
                         <i class="fa fa-ban"></i>
                       <% end %>
                     <% end -%>
@@ -106,7 +106,7 @@
                   <%= simple_form_for(order, url: booking_path, method: "patch") do |f| -%>
                     <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                     <%= f.input :id, value: order.id, as: :hidden %>
-                    <%= button_tag type: 'submit', class: "submit-icon" do %>
+                    <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Cancel booking'} do %>
                       <i class="fa fa-ban"></i>
                     <% end %>
                   <% end -%>
