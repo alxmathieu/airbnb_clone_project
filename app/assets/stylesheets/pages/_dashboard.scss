@@ -1,19 +1,19 @@
-.card-booking{
-
-}
-
-
 
 .card-price-status, .validation{
   display: flex;
 }
 
-.card-booking {
+.card-order {
   text-align: center;
   margin-top: 30px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   background-color: white;
+  min-height: 400px;
+}
+
+.card-booking{
+  min-height: 570px;
 }
 
 .card-username {
@@ -39,7 +39,7 @@ p{
   margin-right: 10px;
 }
 
-.card-booking:hover {
+.card-order:hover {
   background-color: rgb(230,230,230);
 .submit-icon{
   background-color: rgb(230,230,230);

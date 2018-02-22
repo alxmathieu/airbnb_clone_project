@@ -6,7 +6,7 @@
         <% @my_bookings.each do |booking| %>
           <li>
             <div class="col-xs-12 col-sm-6 col-lg-4">
-              <div class="card-booking">
+              <div class="card-order card-booking">
                 <%= link_to(user_path(booking.customer)) do %>
                 <%= image_tag booking.customer.avatar, class: "avatar-dash"%>
                 <% end %>
@@ -68,7 +68,7 @@
       <% @my_orders.each do |order| %>
         <li>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card-booking">
+            <div class="card-order">
               <%= link_to(user_path(order.performance.artist)) do %>
                 <%= image_tag order.performance.artist.avatar, class: "avatar-dash"%>
               <% end %>
