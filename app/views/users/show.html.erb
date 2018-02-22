@@ -46,7 +46,7 @@
         <div class="row">
           <% @user.photos.each do |photo| %>
             <div class="col-xs-12 col-sm-4">
-              <div class="photo" style="background-image: url('<%= cl_image_path photo.artist_photo %>');">
+              <div class="photo swipebox" style="background-image: url('<%= cl_image_path photo.artist_photo %>');">
                 <%= link_to "", photo, class: "photo-link" %>
               </div>
             </div>
