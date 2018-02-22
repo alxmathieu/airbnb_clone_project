@@ -11,7 +11,7 @@
   <div class="row">
     <% @users.each do |artist| %>
       <div class="col-xs-12 col-sm-6 col-lg-6">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url(<%= artist.photos[0]%>)" >
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path artist.photos.first.artist_photo%>')" >
           <div class="card-content" >
             <div class="username">
               <p>by <%= link_to "#{artist.username}", user_path(artist) %></p>

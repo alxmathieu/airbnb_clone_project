@@ -1,8 +1,7 @@
 <% unless @user.photos.empty? %>
-  <div class="banner-photo" style="background-image: url(<%= @user.photos.first %>);">
+  <div class="banner-photo" style="background-image: url('<%= cl_image_path @user.photos.first.artist_photo %>');">
   </div>
 <% end %>
-
 <div class="container">
   <div class="row">
     <div class="col-md-8">
@@ -47,14 +46,13 @@
         <div class="row">
           <% @user.photos.each do |photo| %>
             <div class="col-xs-12 col-sm-4">
-              <div class="photo" style="background-image: url(<%= photo %>);">
+              <div class="photo" style="background-image: url('<%= cl_image_path photo.artist_photo %>');">
                 <%= link_to "", photo, class: "photo-link" %>
               </div>
             </div>
           <% end %>
         </div>
       </div>
-
     </div>
 
     <div class="col-md-4">
