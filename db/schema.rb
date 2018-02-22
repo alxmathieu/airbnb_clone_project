@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222132511) do
+
+ActiveRecord::Schema.define(version: 20180222132412) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +41,14 @@ ActiveRecord::Schema.define(version: 20180222132511) do
     t.index ["user_id"], name: "index_performances_on_user_id"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "artist_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_photos_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -55,7 +65,6 @@ ActiveRecord::Schema.define(version: 20180222132511) do
     t.string "username"
     t.string "avatar"
     t.boolean "is_artist", default: false
-    t.string "photos", default: [], array: true
     t.string "location"
     t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -65,4 +74,5 @@ ActiveRecord::Schema.define(version: 20180222132511) do
   add_foreign_key "bookings", "performances"
   add_foreign_key "bookings", "users"
   add_foreign_key "performances", "users"
+  add_foreign_key "photos", "users"
 end

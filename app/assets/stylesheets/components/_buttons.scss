@@ -1,9 +1,60 @@
+.edit-pen {
+  color: #00B7C2;
+  font-size: 30px;
+  margin: 10px;
+  text-shadow: 1px 1px 1px $light-gray;
+  transition: .5s ease;
+
+  &:hover {
+    font-size: 32px;
+    text-decoration: none;
+  }
+}
+
+.add-plus {
+  color: $eucalyptus;
+  font-size: 30px;
+  margin: 10px;
+  text-shadow: 1px 1px 1px $light-gray;
+  transition: .5s ease;
+
+  &:hover {
+    color:#34db9e;
+    font-size: 32px;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color:$eucalyptus;
+    font-size: 32px;
+    text-decoration: none;
+  }
+
+
+}
+
+.trash-btn {
+  color: rgba(255,255,255,0.7);
+  font-size: 50px;
+  margin: 10px;
+  transition: .5s ease;
+
+  &:hover {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+  }
+
+}
+
+
+
 
 .add-btn {
   background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
   border-radius: 30px;
   margin: 15px;
-  font-size: 10px;
+  font-size: 15px;
+  font-weight: bold;
   padding: 10px 30px;
   color: white;
   text-decoration: none;
@@ -42,9 +93,11 @@
   padding: 10px 30px;
   width-max: 50px;
   color: white;
+  font-weight: 600;
   text-decoration: none;
   box-shadow: 1px 1px 1px $silver-gray;
   text-align: center;
+
 
   &:hover {
     text-decoration: none;
