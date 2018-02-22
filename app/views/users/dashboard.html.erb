@@ -13,7 +13,8 @@
           <div class="infos col-xs-12 col-md-4">
             <%= order.performance.artist.username %>
             <p> <%= order.date %> in <%= order.location %> </p>
-            Order: <p><%= order.work_asked %> </p>
+            <%= order.performance.description %>
+            <p><%= order.work_asked %> </p>
           </div>
           <div class="price col-xs-4 col-md-2">
             <%= order.performance.price %>€
@@ -31,8 +32,6 @@
                 <% end %>
               <% end -%>
             <% end %>
-
-
           </div>
         </li>
       <% end %>
@@ -53,7 +52,8 @@
             <div class="infos col-xs-12 col-md-4">
               <%= booking.customer.username %>
               <p> <%= booking.date %> in <%= booking.location %> </p>
-              Order: <p><%= booking.work_asked %> </p>
+              <%= booking.performance.description %>
+              <p><%= booking.work_asked %> </p>
             </div>
             <div class="price col-xs-4 col-md-2">
               <%= booking.performance.price %>€
@@ -87,8 +87,6 @@
                   <% end %>
                 <% end -%>
               <% end %>
-
-
             </div>
           </li>
         <% end %>
