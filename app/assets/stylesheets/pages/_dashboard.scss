@@ -41,12 +41,9 @@ p{
 
 .card-order:hover {
   background-color: rgb(230,230,230);
-.submit-icon{
-  background-color: rgb(230,230,230);
-}
-a{
-  color: $eucalyptus;
-}
+  .submit-icon{
+    background-color: rgb(230,230,230);
+  }
 }
 
 .avatar-dash {
@@ -61,20 +58,18 @@ a{
   color: $silver-gray;
   justify-content: space-around;
   align-items: center;
-i {
-  margin: 10px;
-  font-size: 30px;
-
-  }
+  i {
+    margin: 10px;
+    font-size: 30px;
+    }
 }
 
 .submit-icon{
   background-color: $white;
   border: 0px;
-&:hover{
-  background-color: rgb(230,230,230);
-}
-
+  &:hover{
+    background-color: rgb(230,230,230);
+  }
 }
 
 .fa-check:hover {
@@ -90,9 +85,16 @@ i {
 }
 
 .declined-order{
-  margin: 14px 0;
+  margin: 15px 0;
+  background-color: $eucalyptus;
+  color: white;
   a {text-decoration: none;
-  color: $silver-gray;
+  font-weight: bold;
+  color: white;
   }
-
+  &:hover {
+    background-color: #2ec38c;
+    font-weight: bold;
+    color: white;
+  }
 }
