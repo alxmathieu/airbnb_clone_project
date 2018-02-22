@@ -62,8 +62,6 @@
         <% if @user.performances.first.nil? %>
           <h2 class="text-center">You can't book me yet, sorry!</h2>
         <% else %>
-        <button type="button" class="btn btn-primary" id="booking-button">Primary</button>
-
           <h2 class="text-center">Book me for <span id="booking-title"><%= @user.performances.first.description %></span></h2>
           <%= simple_form_for @booking do |f| %>
             <%= f.hidden_field :performance_id, value: @user.performances.first.id %>

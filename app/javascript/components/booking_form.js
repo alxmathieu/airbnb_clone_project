@@ -33,8 +33,13 @@ function sweetAlertBookingButton() {
       text: "The artist will be notified of your booking, he should get in touch soon!",
       icon: "success"
     })
+    .then((value) => {
+      if (value) {
+        document.location.href = '/dashboard';
+      }
+    });
   });
-}
+};
 
 export { sweetAlertBookingButton };
 

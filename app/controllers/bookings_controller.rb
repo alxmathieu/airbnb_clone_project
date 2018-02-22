@@ -2,9 +2,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.customer = current_user
-    if @booking.save
-      redirect_to dashboard_path
-    else
+    unless @booking.save
       render 'users/show'
     end
   end
