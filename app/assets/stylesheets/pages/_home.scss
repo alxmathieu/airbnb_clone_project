@@ -8,7 +8,6 @@ html, body {
   color: white;
   text-align: center;
   height: calc(100vh - 70px);
-  // width: 185,5vh;
   width: 100%;
   background-size: cover !important;
   background-position: center;
@@ -106,11 +105,11 @@ a{
   margin-right: 0px;
 }
 
-.content1 {
+.wrapper {
   min-height: 100%;
   padding-bottom: 20px;
 }
 
-.content2 {
+.content {
   padding-bottom: 100px;
 }
