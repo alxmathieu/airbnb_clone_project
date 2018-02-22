@@ -6,7 +6,8 @@
     "bootstrap": "3",
     "flatpickr": "^4.3.2",
     "jquery": "^3.3.1",
-    "sweetalert": "^2.1.0"
+    "sweetalert": "^2.1.0",
+    "swipebox": "^1.4.6"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1"

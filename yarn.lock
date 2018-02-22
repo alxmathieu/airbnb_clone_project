@@ -5538,6 +5538,10 @@ sweetalert@^2.1.0:
     es6-object-assign "^1.1.0"
     promise-polyfill "^6.0.2"
 
+swipebox@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/swipebox/-/swipebox-1.4.6.tgz#8b879af681a9d2bdad019bc92f5f35b6db5928db"
+
 tapable@^0.2.7:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
