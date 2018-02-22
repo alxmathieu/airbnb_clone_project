@@ -106,6 +106,28 @@
   }
 }
 
+#overlay-add {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity:1;
+  }
+}
+
 .delete-photos {
   color: rgba(255,255,255,0.7);
   transition: .5s ease;
@@ -117,7 +139,7 @@
   }
 
   &:hover {
-    color: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
     text-decoration: none;
   }
 
@@ -142,7 +164,8 @@
   }
 
   h4 {
-    font-family: 'Heboo';
+    font-family: 'Roboto';
+    color: $silver-gray;
     font-size: 15px;
     font-style: italic;
   }

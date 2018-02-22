@@ -48,7 +48,7 @@
                 <h4> <%= performance.price %> €</h4>
                 <div class="edit-btns">
                   <%= link_to "", "#", class: "fas fa-pen-square edit-pen" %>
-                  <%= link_to "", performance_path(performance), method: :delete, class: "fas fa-trash edit-btn" %>
+                  <%= link_to "", performance_path(performance), method: :delete, class: "fas fa-times-circle trash-btn-red" %>
                 </div>
                 <div id="edit-perf-form" class="card-performance hidden">
                   <%= simple_form_for(performance) do |f| %>
@@ -77,16 +77,21 @@
 
               <div class="overlay">
                 <div class="delete-photos">
-                <%= link_to "", photo_path(photo), method: :delete, class: "fas fa-trash trash-btn" %>
+                <%= link_to "", photo_path(photo), method: :delete, class: "fas fa-times-circle trash-btn-grey" %>
                 <p> Delete </p>
                 </div>
               </div>
             </div>
             <% end %>
 
-            <div class="card-photos col-xs-6 col-md-3">
-              <div style= "background-image : asset-url('background-photo.jpg')">
-                <%= link_to "", "#", class: "fas fa-plus-square add-plus", id: "add-photo-btn" %>
+            <div class="card-photos col-xs-6 col-md-3" style= "background-color: black)">
+              <div class= "photo-style" style= "background-image : linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1505840541251-02ab21f95b45?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=42ff8682cf27a5e78548f9523ed29d4d&auto=format&fit=crop&w=632&q=80'); background-position: center;">
+                <div class="overlay" id="overlay-add">
+                  <div class="delete-photos">
+                      <%= link_to "", "#", class: "fas fa-plus-square trash-btn-grey", id: "add-photo-btn" %>
+                      <p>Add Photo</p>
+                  </div>
+                </div>
               </div>
               <div class="hidden">
                 <%= simple_form_for([@user, @photo]) do |f| %>
