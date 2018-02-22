@@ -1,6 +1,8 @@
 .card-booking{
-  background-color: white;
+
 }
+
+
 
 .card-price-status, .validation{
   display: flex;
@@ -11,6 +13,7 @@
   margin-top: 30px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background-color: white;
 }
 
 .card-username {
@@ -40,6 +43,9 @@ p{
   background-color: rgb(230,230,230);
 .submit-icon{
   background-color: rgb(230,230,230);
+}
+a{
+  color: $eucalyptus;
 }
 }
 
@@ -79,9 +85,14 @@ i {
   color: $salmon;
 }
 
+.map{
+  padding-top: 15px;
+}
 
+.declined-order{
+  margin: 14px 0;
+  a {text-decoration: none;
+  color: $silver-gray;
+  }
 
-
-
-
-
+}

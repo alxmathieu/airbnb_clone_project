@@ -7,6 +7,8 @@ end
 
 ruby '2.4.3'
 
+# Geocoding gem
+gem "geocoder"
 
 # Authentification and security
 gem 'devise'
