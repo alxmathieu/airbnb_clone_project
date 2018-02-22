@@ -26,3 +26,7 @@ import { showCreatePerfForm } from '../components/show_edit_forms';
 if (document.getElementById("create-perf-btn")) {
   showCreatePerfForm();
 };
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
