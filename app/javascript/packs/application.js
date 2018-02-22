@@ -27,6 +27,14 @@ if (document.getElementById("create-perf-btn")) {
   showCreatePerfForm();
 };
 
+import { sweetAlertBookingButton } from '../components/booking_form';
+if (document.getElementById("booking-button")) {
+  sweetAlertBookingButton();
+};
+
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+$('.swipebox').swipebox();
+
