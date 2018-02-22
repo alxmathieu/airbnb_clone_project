@@ -1,16 +1,43 @@
-
-
-
-.wrapper-edit {
-  padding: 10px;
-  background-color: #fafaf9;
-  margin: 20px 10px;
+.header-edit {
+  display: flex;
+  justify-content: flex-start;
+  align-item: center;
+  text-align: center;
+  height: 30vh;
   padding: 20px;
-  box-shadow: 1px 1px 3px $silver-gray;
+  padding-left: 200px;
+  background-color: rgba(0,0,0,0.3);
+
+
+  .avatar-edit {
+    margin: 15px;
+    flex: 0 0 auto;
+    box-shadow: 1px 1px 1px black;
+  }
 }
 
+.header-text {
+
+  align-self: center;
+  text-align: left;
+
+  p {
+    flex: 0 1 auto;
+    margin: 0px;
+    font-size: 15px;
+  }
+
+  h1 {
+    flex: 0 1 auto;
+    margin: 0px;
+  }
+
+}
+
+
+
 .title-card {
-  padding: 30px;
+  padding: 10px 0px 10px 30px;
   margin: 15px;
   height: 10vh;
   display: flex;
@@ -18,29 +45,82 @@
   align-items: center;
 }
 
+.wrapper-edit {
+  padding: 10px;
+  background-color: #fafaf9;
+  margin: 20px 10px;
+  padding: 20px;
+  box-shadow: 1px 1px 3px $silver-gray;
+  border-radius: 3px;
+}
+
+
 .card-photos {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
   margin: 20px;
   height: 50vh;
+  padding: 0px;
 
   .photo-style {
-    height: 80%;
+    display: block;
+    height: 100%;
     background-size: cover;
     background-position: center;
     box-shadow: 1px 1px 1px $silver-gray;
-    flex: 1 1 auto;
   }
 
-  a {
-    width: 130px;
-    font-weight: lighter;
-    text-align: center;
-    align-self: center;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
   }
 
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  &:hover {
+    opacity:1;
+  }
+}
+
+.delete-photos {
+  color: rgba(255,255,255,0.7);
+  transition: .5s ease;
+  font-size: 50px;
+  margin: 10px;
+
+  p {
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: rgba(255,255,255,0.1);
+    text-decoration: none;
+  }
+
+
+
+}
+
+
+
 
 .card-performance {
   padding: 30px;
