@@ -5,11 +5,11 @@ html, body {
 }
 
 .banner {
-  position: relative;
   color: white;
   text-align: center;
   height: calc(100vh - 70px);
-  width: 185,5vh;
+  // width: 185,5vh;
+  width: 100%;
   background-size: cover !important;
   background-position: center;
   display: flex;
@@ -17,8 +17,7 @@ html, body {
 }
 
 .banner-content {
-  position: absolute;
-  top: 140px;
+  padding-top: 140px;
   text-align: center;
   h1 {
     font-size: 90px;
@@ -39,7 +38,6 @@ html, body {
   margin-top: 30px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-
 }
 
 .avatar_circle {
@@ -88,7 +86,6 @@ a{
   color: $white;
   font-size: 13px;
 }
-
 
 .card-link {
   position: absolute;
