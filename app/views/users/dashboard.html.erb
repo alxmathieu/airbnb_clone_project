@@ -22,7 +22,13 @@
                 </div>
                 <div class="card-price-status">
                   <h2><%= booking.performance.price %> €</h2>
-                  <h2><%= booking.status %></h2>
+                  <% if booking.status == "Accepted" %>
+                    <h2 class="status-accepted">Accepted</h2>
+                  <% elsif booking.status =="Pending" %>
+                    <h2 class="status-pending">Pending</h2>
+                  <% else %>
+                    <h2 class="status-declined">Declined</h2>
+                  <% end %>
                 </div>
                 <div class="validation">
                   <% if booking.status == "Pending" %>
@@ -81,12 +87,18 @@
                 <%= order.work_asked %>
               </div>
               <% if order.status == "Pending" %>
-                <h2><%= order.performance.price %> €</h2>
-                <h2><%= order.status %></h2>
+                <div class="card-price-status">
+                  <h2><%= order.performance.price %> €</h2>
+                  <h2>Pending</h2>
+                </div>
               <% else %>
                 <div class="card-price-status">
                   <h2><%= order.performance.price %> €</h2>
-                  <h2><%= order.status %></h2>
+                  <% if order.status == "Accepted" %>
+                    <h2 class="status-accepted">Accepted</h2>
+                  <% else %>
+                    <h2 class="status-declined">Declined</h2>
+                  <% end %>
                 </div>
               <% end %>
               <div class="validation">
