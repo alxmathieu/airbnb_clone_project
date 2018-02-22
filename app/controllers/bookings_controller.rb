@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.customer = current_user
+    @user = User.find(Performance.find(params[:booking][:performance_id]).user_id)
     unless @booking.save
       render 'users/show'
     end

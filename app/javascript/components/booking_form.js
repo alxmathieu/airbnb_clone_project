@@ -25,9 +25,11 @@ function bookingForm() {
   );
 };
 
-
-function sweetAlertBookingButton() {
-  document.getElementById('booking-button').addEventListener('click', () => {
+function formIsValid() {
+  const bookingBtn = document.getElementById('booking-button');
+  const dateField = document.getElementById('booking_date');
+  const locationField = document.getElementById('booking_location');
+  if (dateField.value != "" && locationField.value != "") {
     swal({
       title: "Booking confirmed!",
       text: "The artist will be notified of your booking, he should get in touch soon!",
@@ -38,7 +40,11 @@ function sweetAlertBookingButton() {
         document.location.href = '/dashboard';
       }
     });
-  });
+  }
+};
+
+function sweetAlertBookingButton() {
+  document.getElementById('booking-button').addEventListener('click', formIsValid)
 };
 
 export { sweetAlertBookingButton };
