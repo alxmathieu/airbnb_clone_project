@@ -13,6 +13,13 @@ class PerformancesController < ApplicationController
     redirect_to edit_user_path(current_user)
   end
 
+
+  def destroy
+    @performance = Performance.find(params[:id])
+    @performance.destroy
+    redirect_to edit_user_path(current_user)
+  end
+
   private
 
   def performances_params

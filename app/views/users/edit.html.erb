@@ -28,73 +28,78 @@
   </div>
 
 
-  <div class="wrapper-edit container-fluid">
-    <div class="row">
-      <div class="title-card">
-       <h2> My Perfs</h2>
-        <%= link_to "", "#", class: "fas fa-plus-square add-plus", id: "create-perf-btn" %>
-      </div>
-      <div id="add-perf-form" class="hidden">
-        <%= simple_form_for(@performance) do |f| %>
-          <%= f.input :description %>
-          <%= f.input :price %>
-          <%= f.submit "Create Performance", class: "edit-btn" %>
-        <% end %>
-      </div>
-      <div class="container-fluid">
-        <%  @user.performances.each do |performance|%>
-          <div class="card-performance col-xs-3">
-            <h3> <%=  performance.description %> </h3>
-            <h4> <%= performance.price %> €</h4>
-            <div class="edit-btns">
-              <%= link_to "", "#", class: "fas fa-pen-square edit-pen" %>
-              <%= link_to "", "#", class: "fas fa-trash edit-pen" %>
-            </div>
-          </div>
-            <div id="edit-perf-form" class="hidden">
-            <%= simple_form_for(performance) do |f| %>
-              <%= f.input :description %>
-              <%= f.input :price %>
-              <%= f.submit "Create Performance", class: "edit-btn" %>
-            </div>
+    <div class="wrapper-edit container-fluid">
+        <div class="title-card">
+         <h2> My Perfs</h2>
+          <%= link_to "", "#", class: "fas fa-plus-square add-plus", id: "create-perf-btn" %>
+        </div>
+        <div id="add-perf-form" class="hidden">
+          <%= simple_form_for(@performance) do |f| %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.submit "Create Performance", class: "edit-btn" %>
+          <% end %>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <%  @user.performances.each do |performance|%>
+              <div class="card-performance col-xs-3">
+                <h3> <%=  performance.description %> </h3>
+                <h4> <%= performance.price %> €</h4>
+                <div class="edit-btns">
+                  <%= link_to "", "#", class: "fas fa-pen-square edit-pen" %>
+                  <%= link_to "", performance_path(performance), method: :delete, class: "fas fa-trash edit-btn" %>
+                </div>
+                <div id="edit-perf-form" class="card-performance hidden">
+                  <%= simple_form_for(performance) do |f| %>
+                    <%= f.input :description %>
+                    <%= f.input :price %>
+                    <%= f.submit "Create Performance", class: "edit-btn" %>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
           </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper-edit">
-    <div class="title-card">
-      <h2> My Photos</h2>
-      <%= link_to "Add", "#", class: "add-btn" %>
-    </div>
-
-    <div class="row ">
-      <div class="photo-container container-fluid">
-
-    <% @user.photos.each do |photo|%>
-      <div class="card-photos col-xs-6 col-md-3">
-        <div class= "photo-style" style= "background-image : url('<%= cl_image_path photo.artist_photo %>')"></div>
-
-        <div class="overlay">
-          <div class="delete-photos">
-          <%= link_to "", photo_path(photo), method: :delete, class: "fas fa-trash trash-btn" %>
-          <p> Delete </p>
-          </div>
         </div>
-      </div>
-      <% end %>
     </div>
-    <div class="row">
-      <%= simple_form_for([@user, @photo]) do |f| %>
-        <!-- [...] -->
-        <%= f.input :artist_photo %>
-        <%= f.input :artist_photo_cache, as: :hidden %>
-        <!-- [...] -->
-        <%= f.submit "Add Photo" %>
-      <% end %>
+
+    <div class="wrapper-edit">
+      <div class="title-card">
+        <h2> My Photos</h2>
+      </div>
+
+      <div class="row ">
+        <div class="photo-container container-fluid">
+
+          <% @user.photos.each do |photo|%>
+            <div class="card-photos col-xs-6 col-md-3">
+              <div class= "photo-style" style= "background-image : url('<%= cl_image_path photo.artist_photo %>')"></div>
+
+              <div class="overlay">
+                <div class="delete-photos">
+                <%= link_to "", photo_path(photo), method: :delete, class: "fas fa-trash trash-btn" %>
+                <p> Delete </p>
+                </div>
+              </div>
+            </div>
+            <% end %>
+
+            <div class="card-photos col-xs-6 col-md-3">
+              <div style= "background-image : asset-url('background-photo.jpg')">
+                <%= link_to "", "#", class: "fas fa-plus-square add-plus", id: "add-photo-btn" %>
+              </div>
+              <div class="hidden">
+                <%= simple_form_for([@user, @photo]) do |f| %>
+                  <!-- [...] -->
+                  <%= f.input :artist_photo %>
+                  <%= f.input :artist_photo_cache, as: :hidden %>
+                  <!-- [...] -->
+                  <%= f.submit "Add Photo" %>
+                <% end %>
+              </div>
+            </div>
+
+        </div>
     </div>
   </div>
 </div>
-
