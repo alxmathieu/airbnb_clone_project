@@ -4,6 +4,10 @@ html, body {
   margin: 0;
 }
 
+.modal.fade {
+  z-index: 10000000 !important;
+}
+
 .banner {
   color: white;
   text-align: center;
@@ -28,68 +32,68 @@ html, body {
 }
 
 
-.input-group{
-  margin-right: 30%;
-  margin-left: 30%;
-  margin-top: 40px;
-  border-radius: 50px;
-}
+// .input-group{
+//   margin-right: 30%;
+//   margin-left: 30%;
+//   margin-top: 40px;
+//   border-radius: 50px;
+// }
 
 
-.form-control {
-  position: relative;
-  border-radius: 50px;
-}
+// .form-control {
+//   position: relative;
+//   border-radius: 50px;
+// }
 
-.btn.btn-success {
-  background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
-  border-radius: 50px;
+// .btn.btn-success {
+//   background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
+//   border-radius: 50px;
 
-}
+// }
 
-.search-btn {
-  position: absolute;
-  right: 3px;
-  background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
-  border-radius: 30px;
-  margin: 15px;
-  font-size: 10px;
-  padding: 10px 30px;
-  color: white;
-  text-decoration: none;
-  box-shadow: 1px 1px 1px $silver-gray;
-  text-align: center;
-  border: 1px solid #999999;
-  padding: 10px 15px;
-  border-radius: 50px;
-  width: 150px;
+// .search-btn {
+//   position: absolute;
+//   right: 3px;
+//   background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
+//   border-radius: 30px;
+//   margin: 15px;
+//   font-size: 10px;
+//   padding: 10px 30px;
+//   color: white;
+//   text-decoration: none;
+//   box-shadow: 1px 1px 1px $silver-gray;
+//   text-align: center;
+//   border: 1px solid #999999;
+//   padding: 10px 15px;
+//   border-radius: 50px;
+//   width: 150px;
 
-  &:hover {
-    text-decoration: none;
-    color: white;
-  }
-}
+//   &:hover {
+//     text-decoration: none;
+//     color: white;
+//   }
+// }
 
-.search {
-  border: 1px solid #999999;
-  padding: 12px 17px;
-  border-radius: 50px;
-  width: 1200px;
+// .search {
+//   border: 1px solid #999999;
+//   padding: 12px 17px;
+//   border-radius: 50px;
+//   width: 1200px;
 
-  &:hover {
-    text-decoration: none;
-    color: white;
-  }
+//   &:hover {
+//     text-decoration: none;
+//     color: white;
+//   }
 
-}
+// }
 
-  .submit {
-  text-decoration: none !important;
-}
+//   .submit {
+//   text-decoration: none !important;
+// }
 
-.submit-search {
-display: flex;
-}
+// .submit-search {
+// display: flex;
+// }
 
 .card {
   height: 275px;
@@ -165,10 +169,10 @@ a{
   opacity: 0.1;
 }
 
-.row {
-  margin-left: 0px;
-  margin-right: 0px;
-}
+// .row {
+//   margin-left: 0px;
+//   margin-right: 0px;
+// }
 
 .wrapper {
   min-height: 100%;
