@@ -1,6 +1,5 @@
 .card-booking{
   background-color: white;
-  margin: 10px;
 }
 
 .card-price-status, .validation{
@@ -8,12 +7,10 @@
 }
 
 .card-booking {
-  position: relative;
   text-align: center;
   margin-top: 30px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-
 }
 
 .card-username {
@@ -24,14 +21,17 @@
 }
 
 .card-work{
-  text-align: center;
-  font-weight: bolder;
+p{
+  font-size: 13px;
+  color: $silver-gray;
+}
 }
 
 .card-price-status{
   display: flex;
   justify-content: space-around;
-  margin-bottom: 15px;
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 30px;
 }
 
 .card-booking:hover {
@@ -59,14 +59,6 @@ i {
 
   }
 }
-
-.card-order:hover {
-  background-color: rgb(230,230,230);
-.submit-icon{
-  background-color: rgb(230,230,230);
-}
-}
-
 
 .submit-icon{
   background-color: $white;

@@ -2,55 +2,57 @@
   <% if @my_bookings.count > 0 %>
     <div class="bookings">
       <h1>My Bookings</h1>
-      <ul class="list-unstyled row" style="margin-left: 30px">
+      <ul class="list-unstyled row">
         <% @my_bookings.each do |booking| %>
           <li>
-            <div class="card-booking col-xs-12 col-sm-4 col-md-4">
-              <%= link_to(user_path(booking.customer)) do %>
-              <%= image_tag booking.customer.avatar, class: "avatar-dash"%>
-              <% end %>
-              <div class="card-username">
-                <%= booking.customer.username %>
-              </div>
-              <div class="card-work">
-                <h3><%= booking.performance.description %></h3>
-                <p><%= booking.work_asked %></p>
-                <h1>MAP</h1>
-              </div>
-              <div class="card-price-status">
-                <h2><%= booking.performance.price %> €</h2>
-                <h2><%= booking.status %></h2>
-              </div>
-              <div class="validation">
-                <% if booking.status == "Pending" %>
-                  <div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="card-booking">
+                <%= link_to(user_path(booking.customer)) do %>
+                <%= image_tag booking.customer.avatar, class: "avatar-dash"%>
+                <% end %>
+                <div class="card-username">
+                  <%= booking.customer.username %>
+                </div>
+                <div class="card-work">
+                  <h3><%= booking.performance.description %></h3>
+                  <%= booking.work_asked %>
+                  <h1>MAP</h1>
+                </div>
+                <div class="card-price-status">
+                  <h2><%= booking.performance.price %> €</h2>
+                  <h2><%= booking.status %></h2>
+                </div>
+                <div class="validation">
+                  <% if booking.status == "Pending" %>
+                    <div>
+                      <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
+                        <%= f.input :status, input_html: {value: "Accepted"}, as: :hidden%>
+                        <%= f.input :id, value: booking.id, as: :hidden %>
+                        <%= button_tag type: 'submit', class: "submit-icon" do %>
+                          <i class="fa fa-check"></i>
+                        <% end %>
+                      <% end -%>
+                    </div>
+                    <div>
+                      <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
+                        <%= f.input :status, input_html: {value: "Declined"}, as: :hidden%>
+                        <%= f.input :id, value: booking.id, as: :hidden %>
+                        <%= button_tag type: 'submit', class: "submit-icon" do %>
+                          <i class="fa fa-times"></i>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                  <% if booking.status == "Accepted" %>
                     <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
-                      <%= f.input :status, input_html: {value: "Accepted"}, as: :hidden%>
+                      <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                       <%= f.input :id, value: booking.id, as: :hidden %>
                       <%= button_tag type: 'submit', class: "submit-icon" do %>
-                        <i class="fa fa-check"></i>
+                        <i class="fa fa-ban"></i>
                       <% end %>
                     <% end -%>
-                  </div>
-                  <div>
-                    <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
-                      <%= f.input :status, input_html: {value: "Declined"}, as: :hidden%>
-                      <%= f.input :id, value: booking.id, as: :hidden %>
-                      <%= button_tag type: 'submit', class: "submit-icon" do %>
-                        <i class="fa fa-times"></i>
-                      <% end %>
-                    <% end %>
-                  </div>
-                <% end %>
-                <% if booking.status == "Accepted" %>
-                  <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
-                    <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
-                    <%= f.input :id, value: booking.id, as: :hidden %>
-                    <%= button_tag type: 'submit', class: "submit-icon" do %>
-                      <i class="fa fa-ban"></i>
-                    <% end %>
-                  <% end -%>
-                <% end %>
+                  <% end %>
+                </div>
               </div>
             </div>
           </li>
@@ -58,52 +60,49 @@
       </ul>
     </div>
   <% end %>
-
-
   <div class="orders">
     <h1>My Orders</h1>
-    <ul class="list-unstyled row" style="margin-left: 30px">
-      <% @my_bookings.each do |booking| %>
+    <ul class="list-unstyled row">
+      <% @my_orders.each do |order| %>
         <li>
-          <div class="card-booking col-xs-12 col-sm-4 col-md-4">
-            <%= link_to(user_path(booking.customer)) do %>
-            <%= image_tag booking.customer.avatar, class: "avatar-dash"%>
-            <% end %>
-            <div class="card-username">
-              <%= booking.customer.username %>
-            </div>
-            <div class="card-work">
-              <h3><%= booking.performance.description %></h3>
-              <p><%= booking.work_asked %></p>
-              <h1>MAP</h1>
-            </div>
-            <% if booking.status == "Pending" %>
-              <h2><%= booking.performance.price %> €</h2>
-              <h2><%= booking.status %></h2>
-            <% else %>
-              <div class="card-price-status">
-                <h2><%= booking.performance.price %> €</h2>
-                <h2><%= booking.status %></h2>
-              </div>
-            <% end %>
-            <div class="validation">
-              <% if booking.status == "Accepted" %>
-                <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
-                  <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
-                  <%= f.input :id, value: booking.id, as: :hidden %>
-                  <%= button_tag type: 'submit', class: "submit-icon" do %>
-                    <i class="fa fa-ban"></i>
-                  <% end %>
-                <% end -%>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card-booking">
+              <%= link_to(user_path(order.performance.artist)) do %>
+                <%= image_tag order.performance.artist.avatar, class: "avatar-dash"%>
               <% end %>
+              <div class="card-username">
+                <%= order.performance.artist.username %>
+              </div>
+              <div class="card-work">
+                <h3><%= order.performance.description %></h3>
+                <p><%= order.location %></p>
+                <%= order.work_asked %>
+              </div>
+              <% if order.status == "Pending" %>
+                <h2><%= order.performance.price %> €</h2>
+                <h2><%= order.status %></h2>
+              <% else %>
+                <div class="card-price-status">
+                  <h2><%= order.performance.price %> €</h2>
+                  <h2><%= order.status %></h2>
+                </div>
+              <% end %>
+              <div class="validation">
+                <% if order.status == "Accepted" %>
+                  <%= simple_form_for(order, url: booking_path, method: "patch") do |f| -%>
+                    <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
+                    <%= f.input :id, value: order.id, as: :hidden %>
+                    <%= button_tag type: 'submit', class: "submit-icon" do %>
+                      <i class="fa fa-ban"></i>
+                    <% end %>
+                  <% end -%>
+                <% end %>
+              </div>
             </div>
           </div>
         </li>
       <% end %>
     </ul>
-
-
   </div>
-
 </div>
 
