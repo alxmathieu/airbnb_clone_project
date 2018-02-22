@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @performance = Performance.new
+    @photo = Photo.new
   end
 
   def update
@@ -24,7 +25,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:bio)
+    params.require(:user).permit(:bio, {photos: []})
   end
-
 end

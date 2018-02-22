@@ -69,7 +69,8 @@
     <div class="row">
     <% @user.photos.each do |photo|%>
       <div class="card-photos col-xs-4">
-        <div class= "photo-style" style= "background-image : url(<%= photo %>)"></div>
+        <div class= "photo-style" style= "background-image : url('<%= cl_image_path photo.artist_photo %>')"></div>
+
         <div class="overlay">
           <div class="delete-photos">
           <%= link_to "", "#", class: "fas fa-trash trash-btn" %>
@@ -79,6 +80,13 @@
       </div>
     <% end %>
     </div>
+      <%= simple_form_for([@user, @photo]) do |f| %>
+        <!-- [...] -->
+        <%= f.input :artist_photo %>
+        <%= f.input :artist_photo_cache, as: :hidden %>
+        <!-- [...] -->
+        <%= f.submit "Add Photo" %>
+      <% end %>
   </div>
 </div>
 
