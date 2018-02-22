@@ -4,91 +4,39 @@ html, body {
   margin: 0;
 }
 
+.modal.fade {
+  z-index: 10000000 !important;
+}
+
 .banner {
   color: white;
   text-align: center;
   height: calc(100vh - 200px);
-  // width: 185,5vh;
   width: 100%;
   background-size: cover !important;
   background-position: center;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.banner-content {
-  padding-top: 140px;
-  text-align: center;
-  h1 {
-    font-size: 90px;
-  }
-  h2 {
-    font-size: 50px;
-  }
+.banner h1 {
+  font-size: 65px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+.banner h2 {
+  font-size: 30px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.8;
+  margin-bottom: 30px;
 }
 
-
-.input-group{
-  margin-right: 30%;
-  margin-left: 30%;
-  margin-top: 40px;
-  border-radius: 50px;
-}
-
-
-.form-control {
-  position: relative;
-  border-radius: 50px;
-}
-
-.btn.btn-success {
-  background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
-  border-radius: 50px;
-
-}
-
-.search-btn {
-  position: absolute;
-  right: 3px;
-  background-image: linear-gradient(to right, #3af4b0, #5df0a9, #74eca4, #86e8a0, #94e49d);
-  border-radius: 30px;
-  margin: 15px;
-  font-size: 10px;
-  padding: 10px 30px;
-  color: white;
-  text-decoration: none;
-  box-shadow: 1px 1px 1px $silver-gray;
-  text-align: center;
-  border: 1px solid #999999;
-  padding: 10px 15px;
-  border-radius: 50px;
-  width: 150px;
-
-  &:hover {
-    text-decoration: none;
-    color: white;
-  }
-}
-
-.search {
-  border: 1px solid #999999;
-  padding: 12px 17px;
-  border-radius: 50px;
-  width: 1200px;
-
-  &:hover {
-    text-decoration: none;
-    color: white;
-  }
-
-}
-
-  .submit {
-  text-decoration: none !important;
-}
-
-.submit-search {
-display: flex;
+.search-form {
+  padding-top: 30px;
+  width: 400px;
 }
 
 .card {
@@ -97,11 +45,14 @@ display: flex;
   background-size: cover !important;
   background-position: center;
   color: white;
-  position: relative;
   text-align: center;
   margin-top: 30px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.card-content {
+  position: relative;
 }
 
 .avatar_circle {
@@ -116,7 +67,7 @@ display: flex;
 
 .username {
   position: absolute;
-  top: 15px;
+  top: 10px;
   left: 70px;
 a{
   color: $white !important;
@@ -163,11 +114,6 @@ a{
 }
 .card-link:hover {
   opacity: 0.1;
-}
-
-.row {
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .wrapper {
