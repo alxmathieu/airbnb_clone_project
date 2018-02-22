@@ -1,20 +1,40 @@
-.card-order {
-  background-color: $white;
-  padding: 10px;
-  box-shadow: 2px 4px 14px -5px rgba(51,51,51,0.35);
-  margin: 7px;
-  margin-top: 15px;
-  position: relative;
+.card-booking{
+  background-color: white;
 }
 
-.for-flex{
+.card-price-status, .validation{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
 }
 
-.card-order:hover {
+.card-booking {
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.card-username {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-work{
+p{
+  font-size: 13px;
+  color: $silver-gray;
+}
+}
+
+.card-price-status{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 30px;
+}
+
+.card-booking:hover {
   background-color: rgb(230,230,230);
 .submit-icon{
   background-color: rgb(230,230,230);
@@ -22,46 +42,22 @@
 }
 
 .avatar-dash {
-  height: 90px;
-  width: 90px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
-}
-
-.infos{
-  font-size: 20px;
-  margin-left: 30px;
-p {
-  font-weight: lighter;
-  font-size: 14px;
-  color: $silver-gray;
-}
-}
-
-.price {
-  font-size: 25px;
-  font-weight: bolder;
-
-}
-
-.status{
-  font-size: 25px;
-  font-weight: bolder;
+  margin-top: 15px;
 }
 
 .validation{
   display: flex;
   color: $silver-gray;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
 i {
   margin: 10px;
   font-size: 30px;
 
   }
-}
-
-.fa-times:hover, .fa-ban:hover{
-  color: $salmon;
 }
 
 .submit-icon{
@@ -77,6 +73,9 @@ i {
   color: $eucalyptus;
 }
 
+.fa-times:hover, .fa-ban:hover{
+  color: $salmon;
+}
 
 
 
