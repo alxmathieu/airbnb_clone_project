@@ -2,30 +2,35 @@
   <div class="banner-content">
     <h1>Pimp My Wall</h1>
     <h2>make your wall unique</h2>
-    <!-- <a class="btn success-color" href="#">Search</a> -->
+    <%= form_tag root_path, method: :get, id: "search-form" do %>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Wall painting ..." name="query">
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="button"  >Search</button>
+      </span>
+    </div>
+    <% end %>
   </div>
 </div>
-
-
 <div class="container">
   <div class="row">
     <% @users.each do |artist| %>
-      <div class="col-xs-12 col-sm-6 col-lg-6">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url(<%= artist.photos[0]%>)" >
-          <div class="card-content" >
-            <div class="username">
-              <p>by <%= link_to "#{artist.username}", user_path(artist) %></p>
-            </div>
-            <div class="avatar">
-              <%= image_tag artist.avatar, alt:"avatar", class: "avatar_circle" %>
-            </div>
-            <div class="location">
-              <p><i class="fas fa-map-marker-alt"></i> <%= artist.location %></p>
-            </div>
+    <div class="col-xs-12 col-sm-6 col-lg-6">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url(<%= artist.photos[0]%>)" >
+        <div class="card-content" >
+          <div class="username">
+            <p>by <%= link_to "#{artist.username}", user_path(artist) %></p>
           </div>
-          <a class="card-link" href=<%= user_path(artist) %>></a>
+          <div class="avatar">
+            <%= image_tag artist.avatar, alt:"avatar", class: "avatar_circle" %>
+          </div>
+          <div class="location">
+            <p><i class="fas fa-map-marker-alt"></i> <%= artist.location %></p>
           </div>
         </div>
+        <a class="card-link" href=<%= user_path(artist) %>></a>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

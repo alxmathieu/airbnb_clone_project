@@ -12,6 +12,7 @@ ruby '2.4.3'
 gem 'devise'
 gem "pundit"
 gem 'figaro'
+gem 'pg_search'
 
 # Font Gems
 gem 'autoprefixer-rails'
