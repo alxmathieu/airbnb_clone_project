@@ -111,6 +111,13 @@
                     <% end %>
                   <% end -%>
                 <% end %>
+                <% if order.status == "Pending" %>
+                  <%= simple_form_for(order, url: booking_path, method: "patch") do |f| -%>
+                    <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
+                    <%= f.input :id, value: order.id, as: :hidden %>
+                    <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Cancel request'} do %>
+                      <i class="fa fa-ban"></i>
+                <% end %>
                 <% if order.status == "Declined" %>
                   <div class="btn declined-order">
                     <%= link_to "Let's find someone else!", root_path %>
