@@ -1,4 +1,6 @@
 // Booking form on artist page //
+import swal from 'sweetalert';
+
 function fillBookingPerformanceId(id, name) {
   const field = document.getElementById("booking_performance_id");
   const title = document.getElementById("booking-title");
@@ -22,5 +24,18 @@ function bookingForm() {
     link.addEventListener("click", getPerformanceId)
   );
 };
+
+
+function sweetAlertBookingButton() {
+  document.getElementById('booking-button').addEventListener('click', () => {
+    swal({
+      title: "Booking confirmed!",
+      text: "The artist will be notified of your booking, he should get in touch soon!",
+      icon: "success"
+    })
+  });
+}
+
+export { sweetAlertBookingButton };
 
 export{bookingForm};
