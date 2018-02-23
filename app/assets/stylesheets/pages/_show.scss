@@ -15,6 +15,11 @@ body {
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba($silver-gray, 0.4);
+  justify-content: space-between;
+}
+
+.artist-summary {
+  display: flex;
 }
 
 .artist-infos {

@@ -36,6 +36,9 @@
 
 // Wrapper
 
+#bio-text {
+  margin: 15px;
+}
 
 .title-card {
   padding: 10px 0px 10px 30px;
@@ -63,7 +66,7 @@
 
 .card-photos {
   position: relative;
-  margin: 20px;
+  margin: 15px;
   height: 50vh;
   padding: 0px;
   border-radius: 4px;
@@ -171,4 +174,20 @@
     font-style: italic;
   }
 
+}
+
+
+// EDIT FORMS //
+
+.edit-forms {
+  background-color: rgba(205,208,212, 0.2);
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgb(205,208,212);
+  margin: 10px;
+
+
+  button {
+    border-style: none
+  }
 }

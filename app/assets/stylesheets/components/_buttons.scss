@@ -20,7 +20,7 @@
 
 // EDIT PEN BTN //
 .edit-pen {
-  color: #00B7C2;
+  color: $silver-gray;
   font-size: 30px;
   margin: 10px;
   text-shadow: 1px 1px 1px $light-gray;
@@ -28,14 +28,13 @@
 
   &:hover {
     color: #00B7C2;
-    font-size: 32px;
     text-decoration: none;
   }
 }
 
 // DELETE TRASH BTN //
 .trash-btn-red {
-  color: $salmon;
+  color: $silver-gray;
   font-size: 30px;
   margin: 10px;
   text-shadow: 1px 1px 1px $light-gray;
@@ -44,8 +43,7 @@
 
   &:hover {
     color: $salmon;
-    opacity: 0.6;
-    font-size: 32px;
+    opacity: 1;
     text-decoration: none;
   }
 }
@@ -124,7 +122,7 @@
   }
 }
 
-.btn-booking {
+.btn-eucalyptus {
   font-weight: bold;
   color: white;
   background-color: $eucalyptus;

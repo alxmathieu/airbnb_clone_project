@@ -1,3 +1,5 @@
+<!-- HEADER -->
+
 <div class="header-edit" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('<%= cl_image_path @user.photos.first.artist_photo %>')">
     <%= image_tag @user.avatar, alt: "Avatar", class: "avatar-edit" %>
   <div class="header-text">
@@ -6,6 +8,8 @@
   </div>
 </div>
 
+
+<!-- BIO CARD -->
 <div class="container">
   <div class="wrapper-edit">
     <div class="row">
@@ -14,78 +18,84 @@
           <h2> My Bio </h2>
           <%= link_to "", "#", class: "fas fa-pen-square edit-pen", id:"edit-bio-btn" %>
         </div>
-      <p> <%= @user.bio %> </p>
+        <p> <%= @user.bio %> </p>
       </div>
-      <div id="edit-form-bio" class="col-xs-offset-4 col-xs-4 edit-form hidden">
+      <div id="edit-form-bio" class="text-center edit-forms hidden">
         <%= simple_form_for(@user) do |f| %>
           <%= f.input :bio %>
-          <%= f.submit class: "fas fa-check-square"%>
-
-            <!-- <button type= "submit" class='edit-btn'>
-              <i class="fas fa-check-square"></i>
-            </button> -->
+          <%= f.submit class: "btn btn-eucalyptus"%>
         <% end %>
       </div>
     </div>
   </div>
 
-
+<!-- PERF CARD -->
     <div class="wrapper-edit">
         <div class="title-card">
          <h2> My Perfs</h2>
-          <%= link_to "", "#", class: "fas fa-plus-square add-plus", id: "create-perf-btn" %>
         </div>
-        <div id="add-perf-form" class="hidden">
-          <%= simple_form_for(@performance) do |f| %>
-            <%= f.input :description %>
-            <%= f.input :price %>
-            <%= f.submit "Create Performance", class: "edit-btn" %>
-          <% end %>
-        </div>
+
         <div class="container-fluid">
           <div class="row">
             <%  @user.performances.each do |performance|%>
-              <div class="card-performance col-xs-3">
-                <h3> <%=  performance.description %> </h3>
-                <h4> <%= performance.price %> €</h4>
-                <div class="edit-btns">
-                  <%= link_to "", "#", class: "fas fa-pen-square edit-pen" %>
-                  <%= link_to "", performance_path(performance), method: :delete, class: "fas fa-times-circle trash-btn-red" %>
-                </div>
-                <div id="edit-perf-form" class="card-performance hidden">
-                  <%= simple_form_for(performance) do |f| %>
-                    <%= f.input :description %>
-                    <%= f.input :price %>
-                    <%= f.submit "Create Performance", class: "edit-btn" %>
-                  <% end %>
+              <div class="col-xs-3">
+                <div class="card-performance">
+                  <h3> <%=  performance.description %> </h3>
+                  <h4> <%= performance.price %> €</h4>
+                  <div class="edit-btns">
+                    <!--<%= link_to "", "#", class: "fas fa-pen-square edit-pen" %> -->
+                    <%= link_to "", performance_path(performance), method: :delete, class: "fas fa-times-circle trash-btn-red" %>
+                  </div>
+                  <div id="edit-perf-form" class="card-performance hidden">
+                    <%= simple_form_for(performance) do |f| %>
+                      <%= f.input :description %>
+                      <%= f.input :price %>
+                      <%= f.submit "Create Performance", class: "btn btn-eucalyptus" %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             <% end %>
-              <div class="card-performance col-xs-3" style= "background-image : linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516962080544-eac695c93791?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4ed529e5822ea78a3b0056c725e5d7b3&auto=format&fit=crop&w=668&q=80'); background-position: center; background-size: cover;">
-                <div class= "photo-style" >
+            <div class="col-xs-6 col-md-3">
+              <div class="card-photos">
+                <div class= "photo-style" style= "background-image : linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516962080544-eac695c93791?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4ed529e5822ea78a3b0056c725e5d7b3&auto=format&fit=crop&w=668&q=80'); background-position: center; background-size: cover;" >
                   <div class="overlay" id="overlay-add">
                     <div class="delete-photos">
-                        <%= link_to "", "#", class: "fas fa-plus-square trash-btn-grey", id: "add-photo-btn" %>
+                        <%= link_to "", "#", class: "fas fa-plus-square trash-btn-grey", id: "create-perf-btn" %>
                         <p>Add Performance</p>
                     </div>
                   </div>
                 </div>
               </div>
-
+            </div>
+          </div> <!-- end of first row -->
+          <div class="row">
+            <div id="add-perf-form" class="text-center edit-forms hidden">
+              <%= simple_form_for(@performance) do |f| %>
+              <%= f.input :description %>
+              <%= f.input :price %>
+              <%= f.submit "Create Performance", class: "btn btn-eucalyptus" %>
+            <% end %>
+            </div>
           </div>
         </div>
+
     </div>
 
+
+<!-- MY PHOTOS CARD -->
     <div class="wrapper-edit">
       <div class="title-card">
         <h2> My Photos</h2>
       </div>
 
-      <div class="row ">
-        <div class="photo-container container-fluid">
 
+
+      <div class="container-fluid ">
+      <div class="row">
           <% @user.photos.each do |photo|%>
-            <div class="card-photos col-xs-6 col-md-3">
+          <div class= "col-xs-6 col-md-3">
+            <div class="card-photos">
               <div class= "photo-style" style= "background-image : url('<%= cl_image_path photo.artist_photo %>')"></div>
 
               <div class="overlay">
@@ -95,29 +105,35 @@
                 </div>
               </div>
             </div>
+          </div>
             <% end %>
 
-            <div class="card-photos col-xs-6 col-md-3">
-              <div class= "photo-style" style= "background-image : linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1505840541251-02ab21f95b45?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=42ff8682cf27a5e78548f9523ed29d4d&auto=format&fit=crop&w=632&q=80'); background-position: center;">
-                <div class="overlay" id="overlay-add">
-                  <div class="delete-photos">
-                      <%= link_to "", "#", class: "fas fa-plus-square trash-btn-grey", id: "add-photo-btn" %>
-                      <p>Add Photo</p>
+            <div class="col-xs-6 col-md-3">
+              <div class="card-photos">
+                <div class= "photo-style" style= "background-image : linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1505840541251-02ab21f95b45?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=42ff8682cf27a5e78548f9523ed29d4d&auto=format&fit=crop&w=632&q=80'); background-position: center;">
+                  <div class="overlay" id="overlay-add">
+                    <div class="delete-photos">
+                        <%= link_to "", "#", class: "fas fa-plus-square trash-btn-grey", id: "add-photo-btn" %>
+                        <p>Add Photo</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="card-photos">
-                <%= simple_form_for([@user, @photo]) do |f| %>
-                  <!-- [...] -->
-                  <%= f.input :artist_photo%>
-                  <%= f.input :artist_photo_cache, as: :hidden %>
-                  <!-- [...] -->
-                  <%= f.submit "Add Photo" %>
-                <% end %>
-              </div>
             </div>
 
-        </div>
+          </div>
+      </div>
+
+    <div class="row">
+      <div class="text-center edit-forms hidden" id="add-photo-form">
+        <%= simple_form_for([@user, @photo]) do |f| %>
+          <!-- [...] -->
+          <%= f.input :artist_photo%>
+          <%= f.input :artist_photo_cache, as: :hidden %>
+          <!-- [...] -->
+          <%= f.submit "Add Photo", class: "btn btn-eucalyptus" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

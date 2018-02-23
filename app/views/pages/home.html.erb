@@ -2,12 +2,12 @@
   <div class="banner-content">
     <h1>Pimp My Wall</h1>
     <h2>Make your wall unique</h2>
-    <div class="search-form">
+    <div class="search-form" >
       <%= form_tag root_path, method: :get do %>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Wall painting..." name="query">
+        <input type="text" class="form-control" id="input-home-search" placeholder="Wall painting..." name="query">
         <span class="input-group-btn">
-          <button class="btn btn-booking" type="button"  >Search</button>
+          <button class="btn btn-eucalyptus" type="button" id="btn-home-search" >Search</button>
         </span>
       </div>
       <% end %>
