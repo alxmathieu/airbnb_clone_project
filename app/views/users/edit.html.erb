@@ -33,7 +33,6 @@
     <div class="wrapper-edit">
         <div class="title-card">
          <h2> My Perfs</h2>
-          <%= link_to "", "#", class: "fas fa-plus-square add-plus", id: "create-perf-btn" %>
         </div>
         <div id="add-perf-form" class="hidden">
           <%= simple_form_for(@performance) do |f| %>
@@ -65,7 +64,7 @@
                 <div class= "photo-style" >
                   <div class="overlay" id="overlay-add">
                     <div class="delete-photos">
-                        <%= link_to "", "#", class: "fas fa-plus-square trash-btn-grey", id: "add-photo-btn" %>
+                        <%= link_to "", "#", class: "fas fa-plus-square trash-btn-grey", id: "create-perf-btn" %>
                         <p>Add Performance</p>
                     </div>
                   </div>
