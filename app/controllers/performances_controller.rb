@@ -1,6 +1,7 @@
 class PerformancesController < ApplicationController
   def show
     @performance = Performance.find(params[:id])
+    authorize @performance
     @booking = Booking.new
   end
 
