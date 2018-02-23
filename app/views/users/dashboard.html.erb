@@ -17,7 +17,7 @@
                   <h3><%= booking.performance.description %></h3>
                   <%= booking.work_asked %>
                   <div class="map">
-                    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=300x200&sensor=false&maptype=roadmap&markers=color:red%7C#{booking.location}" %>
+                    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=300x200&sensor=false&maptype=roadmap&markers=color:red%7C#{booking.location}&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
                   </div>
                 </div>
                 <div class="card-price-status">
