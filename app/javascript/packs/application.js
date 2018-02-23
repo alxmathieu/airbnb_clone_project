@@ -35,6 +35,3 @@ if (document.getElementById("booking-button")) {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
-
-$('.swipebox').swipebox();
-
