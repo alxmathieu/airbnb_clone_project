@@ -3,10 +3,11 @@
 function showEditBioForm() {
   const editFormBio = document.getElementById("edit-form-bio");
   const editBioBtn = document.getElementById("edit-bio-btn");
-
+  const biodiv = document.getElementById("bio-text");
   editBioBtn.addEventListener("click", (event) => {
     event.preventDefault();
     editFormBio.classList.remove("hidden");
+    biodiv.classList.add("col-xs-4")
   });
 };
 
