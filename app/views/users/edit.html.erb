@@ -18,16 +18,12 @@
           <h2> My Bio </h2>
           <%= link_to "", "#", class: "fas fa-pen-square edit-pen", id:"edit-bio-btn" %>
         </div>
-      <p> <%= @user.bio %> </p>
+        <p> <%= @user.bio %> </p>
       </div>
-      <div id="edit-form-bio" class="col-xs-offset-4 col-xs-4 edit-forms hidden">
+      <div id="edit-form-bio" class="text-center edit-forms hidden">
         <%= simple_form_for(@user) do |f| %>
           <%= f.input :bio %>
-          <%= f.submit class: "fas fa-check-square"%>
-
-            <!-- <button type= "submit" class='edit-btn'>
-              <i class="fas fa-check-square"></i>
-            </button> -->
+          <%= f.submit class: "btn btn-eucalyptus"%>
         <% end %>
       </div>
     </div>
@@ -38,13 +34,7 @@
         <div class="title-card">
          <h2> My Perfs</h2>
         </div>
-        <div id="add-perf-form" class="hidden">
-          <%= simple_form_for(@performance) do |f| %>
-            <%= f.input :description %>
-            <%= f.input :price %>
-            <%= f.submit "Create Performance", class: "edit-btn" %>
-          <% end %>
-        </div>
+
         <div class="container-fluid">
           <div class="row">
             <%  @user.performances.each do |performance|%>
@@ -59,7 +49,7 @@
                   <%= simple_form_for(performance) do |f| %>
                     <%= f.input :description %>
                     <%= f.input :price %>
-                    <%= f.submit "Create Performance", class: "edit-btn" %>
+                    <%= f.submit "Create Performance", class: "btn btn-eucalyptus" %>
                   <% end %>
                 </div>
               </div>
@@ -76,7 +66,17 @@
               </div>
 
           </div>
+          <div class="row">
+            <div id="add-perf-form" class="text-center edit-forms hidden">
+              <%= simple_form_for(@performance) do |f| %>
+              <%= f.input :description %>
+              <%= f.input :price %>
+              <%= f.submit "Create Performance", class: "btn btn-eucalyptus" %>
+            <% end %>
+            </div>
+          </div>
         </div>
+
     </div>
 
 
@@ -86,17 +86,7 @@
         <h2> My Photos</h2>
       </div>
 
-      <div class="row">
-        <div class="col-xs-offset-4 col-xs-4 hidden" id="add-photo-form">
-          <%= simple_form_for([@user, @photo]) do |f| %>
-            <!-- [...] -->
-            <%= f.input :artist_photo%>
-            <%= f.input :artist_photo_cache, as: :hidden %>
-            <!-- [...] -->
-            <%= f.submit "Add Photo" %>
-          <% end %>
-        </div>
-      </div>
+
 
       <div class="row ">
         <div class="photo-container container-fluid">
@@ -124,8 +114,19 @@
                 </div>
               </div>
             </div>
+          </div>
+      </div>
 
-        </div>
+    <div class="row">
+      <div class="text-center edit-forms hidden" id="add-photo-form">
+        <%= simple_form_for([@user, @photo]) do |f| %>
+          <!-- [...] -->
+          <%= f.input :artist_photo%>
+          <%= f.input :artist_photo_cache, as: :hidden %>
+          <!-- [...] -->
+          <%= f.submit "Add Photo", class: "btn btn-eucalyptus" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
