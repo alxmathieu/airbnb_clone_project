@@ -5,8 +5,8 @@
       <ul class="list-unstyled row">
         <% @my_bookings.each do |booking| %>
           <li>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="card-booking">
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+              <div class="card-order card-booking">
                 <%= link_to(user_path(booking.customer)) do %>
                 <%= image_tag booking.customer.avatar, class: "avatar-dash"%>
                 <% end %>
@@ -16,11 +16,19 @@
                 <div class="card-work">
                   <h3><%= booking.performance.description %></h3>
                   <%= booking.work_asked %>
-                  <h1>MAP</h1>
+                  <div class="map">
+                    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=300x200&sensor=false&maptype=roadmap&markers=color:red%7C#{booking.location}" %>
+                  </div>
                 </div>
                 <div class="card-price-status">
                   <h2><%= booking.performance.price %> €</h2>
-                  <h2><%= booking.status %></h2>
+                  <% if booking.status == "Accepted" %>
+                    <h2 class="status-accepted">Accepted</h2>
+                  <% elsif booking.status =="Pending" %>
+                    <h2 class="status-pending">Pending</h2>
+                  <% else %>
+                    <h2 class="status-declined">Declined</h2>
+                  <% end %>
                 </div>
                 <div class="validation">
                   <% if booking.status == "Pending" %>
@@ -28,7 +36,7 @@
                       <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                         <%= f.input :status, input_html: {value: "Accepted"}, as: :hidden%>
                         <%= f.input :id, value: booking.id, as: :hidden %>
-                        <%= button_tag type: 'submit', class: "submit-icon" do %>
+                        <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Accept'} do %>
                           <i class="fa fa-check"></i>
                         <% end %>
                       <% end -%>
@@ -37,7 +45,7 @@
                       <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                         <%= f.input :status, input_html: {value: "Declined"}, as: :hidden%>
                         <%= f.input :id, value: booking.id, as: :hidden %>
-                        <%= button_tag type: 'submit', class: "submit-icon" do %>
+                        <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Decline'} do %>
                           <i class="fa fa-times"></i>
                         <% end %>
                       <% end %>
@@ -47,7 +55,7 @@
                     <%= simple_form_for(booking, url: booking_path, method: "patch") do |f| -%>
                       <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                       <%= f.input :id, value: booking.id, as: :hidden %>
-                      <%= button_tag type: 'submit', class: "submit-icon" do %>
+                      <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Cancel booking'} do %>
                         <i class="fa fa-ban"></i>
                       <% end %>
                     <% end -%>
@@ -66,7 +74,7 @@
       <% @my_orders.each do |order| %>
         <li>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card-booking">
+            <div class="card-order">
               <%= link_to(user_path(order.performance.artist)) do %>
                 <%= image_tag order.performance.artist.avatar, class: "avatar-dash"%>
               <% end %>
@@ -79,12 +87,18 @@
                 <%= order.work_asked %>
               </div>
               <% if order.status == "Pending" %>
-                <h2><%= order.performance.price %> €</h2>
-                <h2><%= order.status %></h2>
+                <div class="card-price-status">
+                  <h2><%= order.performance.price %> €</h2>
+                  <h2>Pending</h2>
+                </div>
               <% else %>
                 <div class="card-price-status">
                   <h2><%= order.performance.price %> €</h2>
-                  <h2><%= order.status %></h2>
+                  <% if order.status == "Accepted" %>
+                    <h2 class="status-accepted">Accepted</h2>
+                  <% else %>
+                    <h2 class="status-declined">Declined</h2>
+                  <% end %>
                 </div>
               <% end %>
               <div class="validation">
@@ -92,10 +106,24 @@
                   <%= simple_form_for(order, url: booking_path, method: "patch") do |f| -%>
                     <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
                     <%= f.input :id, value: order.id, as: :hidden %>
-                    <%= button_tag type: 'submit', class: "submit-icon" do %>
+                    <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Cancel booking'} do %>
                       <i class="fa fa-ban"></i>
                     <% end %>
                   <% end -%>
+                <% end %>
+                <% if order.status == "Pending" %>
+                  <%= simple_form_for(order, url: booking_path, method: "patch") do |f| -%>
+                    <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden%>
+                    <%= f.input :id, value: order.id, as: :hidden %>
+                    <%= button_tag type: 'submit', class: "submit-icon", data: { toggle: 'tooltip', placement: 'bottom', title: 'Cancel request'} do %>
+                      <i class="fa fa-ban"></i>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <% if order.status == "Declined" %>
+                  <div class="btn declined-order">
+                    <%= link_to "Let's find someone else!", root_path %>
+                  </div>
                 <% end %>
               </div>
             </div>

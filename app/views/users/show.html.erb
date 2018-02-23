@@ -1,5 +1,5 @@
 <% unless @user.photos.empty? %>
-  <div class="banner-photo" style="background-image: url('<%= cl_image_path @user.photos.first.artist_photo %>');">
+  <div class="banner-photo" style="background-image: url('<%= cl_image_path @user.photos.first.artist_photo %>'); background-position: center;">
   </div>
 <% end %>
 <div class="container">
@@ -46,14 +46,60 @@
         <div class="row">
           <% @user.photos.each do |photo| %>
             <div class="col-xs-12 col-sm-4">
-              <div class="photo" style="background-image: url('<%= cl_image_path photo.artist_photo %>');">
+              <div class="photo swipebox" style="background-image: url('<%= cl_image_path photo.artist_photo %>');">
                 <%= link_to "", photo, class: "photo-link" %>
               </div>
             </div>
           <% end %>
         </div>
       </div>
+
+      <div class="row" id="gallery">
+        <% @user.photos.each_with_index do |photo, index| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="photo myImg" id= "logo-<%= index %>" style="background-image: url('<%= cl_image_path photo.artist_photo %>');" data-src= "<%= cl_image_path photo.artist_photo %>">
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- The Close Button -->
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="modal-image">
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+      </div>
+
     </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = $('.myImg');
+      var modalImg = $("#modal-image");
+      var captionText = document.getElementById("caption");
+      $('.myImg').click(function(){
+          modal.style.display = "block";
+          var newSrc = $(this).data('src');
+          console.log(newSrc);
+          modalImg.attr('src', newSrc);
+          // captionText.innerHTML = this.alt;
+      });
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+    </script>
+
+
 
     <div class="col-md-4">
       <div class="booking-form">
@@ -63,14 +109,16 @@
           <h2 class="text-center">Book me for <span id="booking-title"><%= @user.performances.first.description %></span></h2>
           <%= simple_form_for @booking do |f| %>
             <%= f.hidden_field :performance_id, value: @user.performances.first.id %>
-            <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-            <%= f.input :location %>
+            <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
+            <%= f.input :location, required: true %>
             <%= f.input :work_asked %>
-            <%= f.button :submit, "Book now!" %>
+            <%= f.button :submit, "Book now!", id:"booking-button", class:"btn btn-booking"%>
           <% end %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
 

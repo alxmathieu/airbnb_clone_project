@@ -123,3 +123,14 @@
     color: white;
   }
 }
+
+.btn-booking {
+  font-weight: bold;
+  color: white;
+  background-color: $eucalyptus;
+  &:hover {
+    background-color: #2ec38c;
+    font-weight: bold;
+    color: white;
+  }
+}

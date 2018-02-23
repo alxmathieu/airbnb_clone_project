@@ -1,17 +1,24 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://bit.ly/2HwhFdx');">
   <div class="banner-content">
     <h1>Pimp My Wall</h1>
-    <h2>make your wall unique</h2>
-    <!-- <a class="btn success-color" href="#">Search</a> -->
+    <h2>Make your wall unique</h2>
+    <div class="search-form">
+      <%= form_tag root_path, method: :get do %>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Wall painting..." name="query">
+        <span class="input-group-btn">
+          <button class="btn btn-booking" type="button"  >Search</button>
+        </span>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
 <div class="container">
   <div class="row">
     <% @users.each do |artist| %>
       <div class="col-xs-12 col-sm-6 col-lg-6">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path artist.photos.first.artist_photo%>')" >
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.1)), url('<%= cl_image_path artist.photos.first.artist_photo%>')" >
           <div class="card-content" >
             <div class="username">
               <p>by <%= link_to "#{artist.username}", user_path(artist) %></p>
@@ -23,10 +30,11 @@
               <p><i class="fas fa-map-marker-alt"></i> <%= artist.location %></p>
             </div>
           </div>
-          <a class="card-link" href=<%= user_path(artist) %>></a>
-          </div>
         </div>
-    <% end %>
+        <a class="card-link" href=<%= user_path(artist) %>></a>
+      </div>
+        <% end %>
+    </div>
   </div>
 </div>
 

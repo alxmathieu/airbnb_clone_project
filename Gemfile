@@ -7,11 +7,14 @@ end
 
 ruby '2.4.3'
 
+# Geocoding gem
+gem "geocoder"
 
 # Authentification and security
 gem 'devise'
 gem "pundit"
 gem 'figaro'
+gem 'pg_search'
 
 # Font Gems
 gem 'autoprefixer-rails'

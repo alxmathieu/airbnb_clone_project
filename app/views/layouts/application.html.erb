@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AirbnbCloneProject</title>
+    <title>Pimp my wall</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
 
@@ -10,11 +12,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
+    <link rel="stylesheet" href="src/css/swipebox.css">
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
   </head>
 
   <body>
-    <div class="content1">
-      <div class="content2">
+    <%= render "shared/login_modal" %>
+    <%= render "shared/signup_modal" %>
+    <div class="wrapper">
+      <div class="content">
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
         <%= yield %>
@@ -23,7 +31,9 @@
     <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_pack_tag 'application', "map" %>
+    <script src="src/js/jquery.swipebox.js"></script>
 
   </body>
 </html>

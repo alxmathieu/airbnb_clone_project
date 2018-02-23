@@ -13,7 +13,7 @@
       <% if current_user.is_artist %>
         <%= link_to "Dashboard", dashboard_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
-        <%= link_to "My page", edit_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My page", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
 
       <% else %>
@@ -58,7 +58,8 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sign up", "#sign-up", "data-toggle" => "modal", class: 'navbar-wagon-item navbar-wagon-link' %>
+      <%= link_to "Sign in", "#login", "data-toggle" => "modal", class: 'navbar-wagon-item navbar-wagon-link' %>
     <% end %>
   </div>
 
