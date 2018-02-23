@@ -1,16 +1,3 @@
-.edit-pen {
-  color: #00B7C2;
-  font-size: 30px;
-  margin: 10px;
-  text-shadow: 1px 1px 1px $light-gray;
-  transition: .5s ease;
-
-  &:hover {
-    font-size: 32px;
-    text-decoration: none;
-  }
-}
-
 .add-plus {
   color: $eucalyptus;
   font-size: 30px;
@@ -29,11 +16,43 @@
     font-size: 32px;
     text-decoration: none;
   }
-
-
 }
 
-.trash-btn {
+// EDIT PEN BTN //
+.edit-pen {
+  color: #00B7C2;
+  font-size: 30px;
+  margin: 10px;
+  text-shadow: 1px 1px 1px $light-gray;
+  transition: .5s ease;
+
+  &:hover {
+    color: #00B7C2;
+    font-size: 32px;
+    text-decoration: none;
+  }
+}
+
+// DELETE TRASH BTN //
+.trash-btn-red {
+  color: $salmon;
+  font-size: 30px;
+  margin: 10px;
+  text-shadow: 1px 1px 1px $light-gray;
+  transition: .5s ease;
+  border-radius: 0px;
+
+  &:hover {
+    color: $salmon;
+    opacity: 0.6;
+    font-size: 32px;
+    text-decoration: none;
+  }
+}
+
+
+// EDIT PHOTOS BTN //
+.trash-btn-grey {
   color: rgba(255,255,255,0.7);
   font-size: 50px;
   margin: 10px;

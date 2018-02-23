@@ -3,20 +3,21 @@
   justify-content: flex-start;
   align-item: center;
   text-align: center;
-  height: 30vh;
+  height: 40vh;
   padding: 20px;
   padding-left: 200px;
-  background-color: rgba(0,0,0,0.3);
-
+  background-size: cover;
+  background-position: center;
 
   .avatar-edit {
     margin: 15px;
-    flex: 0 0 auto;
     box-shadow: 1px 1px 1px black;
   }
 }
 
 .header-text {
+  color: $light-gray;
+  text-shadow: 1px 1px 1px 1px black;
 
   align-self: center;
   text-align: left;
@@ -31,9 +32,9 @@
     flex: 0 1 auto;
     margin: 0px;
   }
-
 }
 
+// Wrapper
 
 
 .title-card {
@@ -54,12 +55,18 @@
   border-radius: 3px;
 }
 
+.photo-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 
 .card-photos {
   position: relative;
   margin: 20px;
   height: 50vh;
   padding: 0px;
+  border-radius: 4px;
 
   .photo-style {
     display: block;
@@ -100,6 +107,28 @@
   }
 }
 
+#overlay-add {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity:1;
+  }
+}
+
 .delete-photos {
   color: rgba(255,255,255,0.7);
   transition: .5s ease;
@@ -111,29 +140,35 @@
   }
 
   &:hover {
-    color: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
     text-decoration: none;
   }
 
-
-
 }
-
-
 
 
 .card-performance {
   padding: 30px;
   margin: 15px;
-  height: 10vh;
+  height: 50vh;
   box-shadow: 1px 1px 1px $silver-gray;
-
-  h3,h4 {
-    font-size: 15px;
-  }
-
+  border-radius: 3px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background-color: white;
+
+  h3 {
+    font-family: 'Roboto';
+    font-size: 20px;
+  }
+
+  h4 {
+    font-family: 'Roboto';
+    color: $silver-gray;
+    font-size: 15px;
+    font-style: italic;
+  }
+
 }

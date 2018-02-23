@@ -7,11 +7,15 @@ class PhotosController < ApplicationController
     redirect_to edit_user_path(current_user)
   end
 
-  private
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to edit_user_path(current_user)
+  end
 
+  private
 
   def photo_params
     params.require(:photo).permit(:artist_photo)
   end
-
 end
