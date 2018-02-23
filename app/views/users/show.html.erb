@@ -17,7 +17,7 @@
         </div>
         <% if current_user == @user %>
           <div class="artist-edit-infos">
-            <button class="btn-eucalyptus">Edit my profile</button>
+            <%= link_to "Edit my profile", edit_user_path(current_user), class:"btn btn-eucalyptus"  %>
           </div>
         <% end %>
       </div>
