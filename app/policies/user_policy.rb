@@ -10,21 +10,16 @@ class UserPolicy < ApplicationPolicy
     scope.where(:id => record.id).exists?
   end
 
-  def create?
-    true
+  def edit?
+    record == user
   end
 
   def update?
-    record.user == user
+    edit?
   end
 
-  def edit?
-    record.user == user
+  def dashboard?
+    record == user
   end
-
-  def destroy?
-    record.user == user
-  end
-
 
 end

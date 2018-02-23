@@ -3,13 +3,6 @@ class BookingPolicy < ApplicationPolicy
     def resolve
       scope
     end
-
-  def index?
-    record.user == user
-  end
-
-  def show?
-    scope.where(:id => record.id).exists?
   end
 
   def create?
@@ -17,18 +10,12 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    edit?
   end
 
   def edit?
-    record.user == user
-  end
-
-  def destroy?
-    record.user == user
+    record.performance.artist == user || record.customer == user
   end
 
 
-
-  end
 end

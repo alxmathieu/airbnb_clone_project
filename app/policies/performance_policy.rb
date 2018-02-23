@@ -10,23 +10,15 @@ class PerformancePolicy < ApplicationPolicy
   end
 
   def show?
-    scope.where(:id => record.id).exists?
+    true
   end
 
   def create?
-    is_artist
-  end
-
-  def update?
-    record.user == user
-  end
-
-  def edit?
-    record.user == user
+    record.artist == user
   end
 
   def destroy?
-    record.user == user
+    record.artist == user
   end
 
 end

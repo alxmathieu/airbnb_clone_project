@@ -8,9 +8,5 @@ class PagesController < ApplicationController
 
     #   @users = User.joins(:performances).where("performances.description LIKE ?", params[:query])
     # end
-
-
-
-
   end
 end
