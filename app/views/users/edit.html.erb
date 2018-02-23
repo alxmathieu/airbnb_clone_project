@@ -1,6 +1,9 @@
 <!-- HEADER -->
-
-<div class="header-edit" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('<%= cl_image_path @user.photos.first.artist_photo %>')">
+<% if @user.photos.empty?%>
+  <div class="header-edit" style="background-color: rgba(150, 150, 150, 0.9)">
+<% else  %>
+  <div class="header-edit" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('<%= cl_image_path @user.photos.first.artist_photo %>')">
+<% end  %>
     <%= image_tag @user.avatar, alt: "Avatar", class: "avatar-edit" %>
   <div class="header-text">
       <h1> <%= @user.username %> </h1>
@@ -93,20 +96,20 @@
 
       <div class="container-fluid ">
       <div class="row">
-          <% @user.photos.each do |photo|%>
-          <div class= "col-xs-6 col-md-3">
-            <div class="card-photos">
-              <div class= "photo-style" style= "background-image : url('<%= cl_image_path photo.artist_photo %>')"></div>
+            <% @user.photos.each do |photo|%>
+            <div class= "col-xs-6 col-md-3">
+              <div class="card-photos">
+                <div class= "photo-style" style= "background-image : url('<%= cl_image_path photo.artist_photo %>')"></div>
 
-              <div class="overlay">
-                <div class="delete-photos">
-                <%= link_to "", photo_path(photo), method: :delete, class: "fas fa-times-circle trash-btn-grey" %>
-                <p> Delete </p>
+                <div class="overlay">
+                  <div class="delete-photos">
+                  <%= link_to "", photo_path(photo), method: :delete, class: "fas fa-times-circle trash-btn-grey" %>
+                  <p> Delete </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-            <% end %>
+              <% end %>
 
             <div class="col-xs-6 col-md-3">
               <div class="card-photos">
