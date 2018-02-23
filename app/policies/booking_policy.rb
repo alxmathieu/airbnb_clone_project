@@ -3,6 +3,7 @@ class BookingPolicy < ApplicationPolicy
     def resolve
       scope
     end
+  end
 
   def index?
     record.user == user
@@ -17,11 +18,11 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    edit?
   end
 
   def edit?
-    record.user == user
+    record.performance.artist == user || record.customer == user
   end
 
   def destroy?
@@ -30,5 +31,4 @@ class BookingPolicy < ApplicationPolicy
 
 
 
-  end
 end

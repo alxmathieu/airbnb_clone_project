@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.customer = current_user
     @user = User.find(Performance.find(params[:booking][:performance_id]).user_id)
     unless @booking.save
