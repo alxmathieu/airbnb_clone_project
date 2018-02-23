@@ -27,6 +27,11 @@ if (document.getElementById("create-perf-btn")) {
   showCreatePerfForm();
 };
 
+import { showAddPhotoForm } from '../components/show_edit_forms';
+if (document.getElementById("add-photo-btn")) {
+  showAddPhotoForm();
+};
+
 import { sweetAlertBookingButton } from '../components/booking_form';
 if (document.getElementById("booking-button")) {
   sweetAlertBookingButton();
