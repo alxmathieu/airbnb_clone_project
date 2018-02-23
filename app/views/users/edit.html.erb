@@ -1,3 +1,5 @@
+<!-- HEADER -->
+
 <div class="header-edit" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('<%= cl_image_path @user.photos.first.artist_photo %>')">
     <%= image_tag @user.avatar, alt: "Avatar", class: "avatar-edit" %>
   <div class="header-text">
@@ -5,6 +7,9 @@
       <p> - <em>Edit here your own profile page</em> 🤔</p>
   </div>
 </div>
+
+
+<!-- BIO CARD -->
 
 <div class="container">
   <div class="wrapper-edit">
@@ -29,7 +34,7 @@
     </div>
   </div>
 
-
+<!-- PERF CARD -->
     <div class="wrapper-edit">
         <div class="title-card">
          <h2> My Perfs</h2>
@@ -75,9 +80,25 @@
         </div>
     </div>
 
+
+
+
+<!-- MY PHOTOS CARD -->
     <div class="wrapper-edit">
       <div class="title-card">
         <h2> My Photos</h2>
+      </div>
+
+      <div class="row text-center">
+        <div class="hidden-form col-xs-3">
+          <%= simple_form_for([@user, @photo]) do |f| %>
+            <!-- [...] -->
+            <%= f.input :artist_photo%>
+            <%= f.input :artist_photo_cache, as: :hidden %>
+            <!-- [...] -->
+            <%= f.submit "Add Photo" %>
+          <% end %>
+        </div>
       </div>
 
       <div class="row ">
@@ -104,15 +125,6 @@
                       <p>Add Photo</p>
                   </div>
                 </div>
-              </div>
-              <div class="card-photos">
-                <%= simple_form_for([@user, @photo]) do |f| %>
-                  <!-- [...] -->
-                  <%= f.input :artist_photo%>
-                  <%= f.input :artist_photo_cache, as: :hidden %>
-                  <!-- [...] -->
-                  <%= f.submit "Add Photo" %>
-                <% end %>
               </div>
             </div>
 
