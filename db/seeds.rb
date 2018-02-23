@@ -34,6 +34,7 @@ photo5 = Photo.create!(artist_photo: open("http://bit.ly/2EPxfTl"), user: user5)
 photo6 = Photo.create!(artist_photo: open("http://bit.ly/2CztPi9"), user: user4)
 photo7 = Photo.create!(artist_photo: open("http://bit.ly/2EATRmX"), user: user7)
 photo8 = Photo.create!(artist_photo: open("http://bit.ly/2CaO8Xv"), user: user3)
+
 puts "Done!"
 
 puts "Creating 3 Performances..."
