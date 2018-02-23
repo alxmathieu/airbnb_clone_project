@@ -65,24 +65,31 @@
     </div>
 
     <div class="col-md-4">
-        <% unless current_user == @user %>
-          <div class="booking-form">
-            <% if user_signed_in? %>
-              <% if @user.performances.first.nil? %>
-                <h2 class="text-center">You can't book me yet, sorry!</h2>
-              <% else %>
-                <h2 class="text-center">Book me for <span id="booking-title"><%= @user.performances.first.description %></span></h2>
-                <%= simple_form_for @booking do |f| %>
-                  <%= f.hidden_field :performance_id, value: @user.performances.first.id %>
-                  <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
-                  <%= f.input :location, required: true %>
-                  <%= f.input :work_asked %>
-                  <%= f.button :submit, "Book now!", id:"booking-button", class:"btn btn-eucalyptus"%>
-                <% end %>
-              <% end %>
+        <div class="booking-form">
+          <% if current_user == @user %>
+            <h2 class="text-center" style="margin-bottom: 30px">Tips to improve your profile</h2>
+            <ul class="list-unstyled">
+              <li>Describe your graphic universe in bio</li><hr>
+              <li>Add performances and be precise!</li><hr>
+              <li>Add photos, photos and photos!</li>
+            </ul>
+          <% else %>
+          <% if user_signed_in? %>
+            <% if @user.performances.first.nil? %>
+              <h2 class="text-center">You can't book me yet, sorry!</h2>
             <% else %>
-              <h2 class="text-center">You need to be signed in to book this artist.</h2>
+              <h2 class="text-center">Book me for <span id="booking-title"><%= @user.performances.first.description %></span></h2>
+              <%= simple_form_for @booking do |f| %>
+                <%= f.hidden_field :performance_id, value: @user.performances.first.id %>
+                <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
+                <%= f.input :location, required: true %>
+                <%= f.input :work_asked %>
+                <%= f.button :submit, "Book now!", id:"booking-button", class:"btn btn-eucalyptus"%>
+              <% end %>
             <% end %>
+          <% else %>
+            <h2 class="text-center">You need to be signed in to book this artist.</h2>
+          <% end %>
           </div>
         <% end %>
     </div>
