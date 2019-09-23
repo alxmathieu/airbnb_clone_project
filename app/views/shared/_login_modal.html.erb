@@ -8,15 +8,15 @@
         <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
       </div>
       <div class="modal-body">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),html:{id:'form-login-modal'}) do |f| %>
           <div class="field">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", id:'email-login' %>
           </div>
 
           <div class="field">
             <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.password_field :password, autocomplete: "off", id:'password-login' %>
           </div>
 
           <% if devise_mapping.rememberable? -%>
